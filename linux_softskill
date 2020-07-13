@@ -1,0 +1,281 @@
+Job Scheduling
+Job scheduling is fundamental to advanced administration of a Linux system. Here you will learn how to work with and schedule jobs, and how to schedule your own scripts.
+
+Table of Contents
+Working with Scheduled Jobs
+Describing how cron Schedules Jobs
+Scheduling a cron Job
+Managing cron Jobs
+Working with at to Schedule Jobs
+Scheduling an at job
+Manipulating an at Job
+Using SystemD Timer Units
+Scheduling a SystemD Timer Unit Task
+Convert a cron Job to a SystemD Timer Unit Task
+Exercise: Create a Script and Schedule it to run
+Working with Scheduled Jobs
+In this video, I'll discuss how to work with scheduled jobs. In Linux, there are three ways that we can schedule jobs. The first is using cron. cron is designed for running tasks on a regular and recurring basis such as hourly or daily. at is designed for scheduling a single job to run at some point in the future. SystemD allows us to run jobs on specific events or time intervals – for example every five minutes or maybe ten minutes after the system boots. Newer versions support calendar timers and this gives us the same type of functionality as cron. cron is handled by the crond daemon. Jobs can be added by any user that has permissions. In /etc we have both a cron.allow and cron.deny file that can be created. Inside each of these text files, we would have one user name per line. So, if the cron.allow file exists, then the cron.deny file doesn't even get checked. However, if the cron.allow file isn't there, then users listed in cron.deny cannot use cron. So either you'll have a list of who is allowed to use cron or who is not.
+
+cron jobs are stored in the crontab file location – which is /var/spool/cron. We should not edit these files manually. Instead, we should use the crontab command. cron jobs are accurate down to approximately one minute. So, if you want to schedule something to happen every few seconds, you can't do that with cron. Instead, you might consider using a systemD timer. crontab entries are specified in a text file with five fields starting from left to right. On the left, we've got the minute, followed by the hour, the day of the month, the month, and the day of the week. Now the day of the week can be used numerically. For example, 0 we could reference as Sunday or we could put in Sun for Sunday. Take note that both 0 and 7 reflect the day of the week – Sunday. We could also use an asterisk in any of these five placeholders, to mean, for example every minute if it's in the minute placeholder section or we might use */10 in the minute placeholder, which means every 10 minutes. The at scheduling command is used when we want to schedule something once and not on a recurring basis. at jobs are handled by the atd daemon. Users have to have permissions to schedule these one-time jobs just like they do with cron.
+
+And in the same way under /etc, we have an allow and deny file for at. Jobs can be queried and removed from the command line. When we schedule an at job, we can give it a date or a time. For example, we might type in at the command line at 9:00pm to run a job at 9:00 p.m. today. The at command can understand some natural language statements such as at noon would run the job at noon or at now + 15 minutes – run the job 15 minutes from now. SystemD can schedule jobs at a relative time. For example, to start a script perhaps 10 minutes after the system has booted. With systemD, each job requires two config files. One is the service file that specifies what it is that needs to run. And the second is the timer file. The timer file specifies when to run the job. Job configuration files for systemD go under /etc/systemd/system. The accuracy is set to one minute by default. But you can get very granular – a much more granular than cron if you wish – with systemD. You can get down to a microsecond. In this video, we discussed how to work with scheduled jobs.
+
+Describing how cron Schedules Jobs
+In this video, I'll describe how cron schedules jobs. At the command line, I'm going to type man crontab. This is going to give me the manual page for the Linux crontab command. Here we can see it describes the fact that the crontab command is designed to maintain crontab files for individual users. This would let users schedule jobs. And as I go further down through the manual page, I can see the command line options. For example, crontab -e would edit the current user's crontab file. I'm going to press Q. This time I'm going to type man 5 crontab. What this means is that instead of getting help about the crontab command itself, what I'm looking for is help about the configuration file crontab. Now I see I have a different manual page than we were looking at previously. Here it's talking about the crontab file, which is used to schedule cron jobs instead of the crontab command itself. As I go further down through this manual page, I will eventually come across an area where it would explain, from left to right, what the values mean in a crontab file. And it tells me that starting from the left, we can specify the minute that a job should run, the hour, the day of the month, the month itself, and finally the day of the week.
+
+So here I can see, I can use names for the day of the week, same thing for months, and the others are numeric values. The manual page then continues to go on saying that I can use an asterisk, for example for every minute or every hour or every day of the month. I can also use ranges of numbers, for example 8 through to 11, perhaps, for hours. I can also use lists of numbers – comma-separated lists or comma-separated ranges. Going to press Q to get out of this crontab configuration file manual page. I'll clear the screen. And at this point, I'm going to type ls/etc/cron*. And I'll press Enter. Here we can see that in the etc directory, we have a number of files. For example, cron.deny lists usernames, one per line, for those users that should not be allowed to use cron. But under etc, I also have a system-wide crontab file. Then I have got other subdirectories under etc, such as cron.daily for daily scheduled jobs, cron.hourly for hourly scheduled jobs, and of course, cron.monthly for monthly scheduled jobs. Let's take a look at the system-wide crontab file. I'm going to type cat /etc/crontab.
+The Linux Terminal window is shown. The presenter types "ls /etc/cron*" in the window. The output returned is as follows:
+/etc/cron.deny  /etc/crontab
+/etc/cron.d:
+0hourly raid-check sa-update sysstat unbound-anchor
+/etc/cron.daily:
+0yum-daily.cron logrotate man-db.cron mlocate rhsmd
+/etc/cron.hourly:
+0anacron 0yum-hourly.cron
+/etc/cron.monthly:
+/etc/cron.weekly:
+[root@rhell /]#
+
+In this crontab file, we can see we've got a couple of variables such as the SHELL being set, the PATH, and so on. Then we have got a number of comments. The pound symbol at the beginning of a line means we have a comment in a file. And it's telling me that the leftmost item would be the minute that I want to schedule something, following on the right – the hour, then continue with the day of the month, the month, and the day of the week. But because this is a system crontab file, in other words, it's not specific to one user. We then, after we specify those date and time ranges, would specify a username that should run the scheduled job. Then the last parameter within this system crontab file is the command to be executed – that could be a Linux command, it could be a reference to a shell script, and so on.
+
+I'm going to clear the screen again. And at this time I'm going to type ls -ld /var/spool/cr*. What I am doing here is displaying the entry for var/spool/cron. This subdirectory is where user cron jobs that get scheduled would be stored. What we've just looked at is the system-wide crontab file. cron is controlled by a daemon. I can check the status to make sure that the daemon is running at any point in time. For example, here at the command line I'll type /sbin/service crond status. When I type this in, it should return whether or not the service or the daemon is active and running, which it does report is true. It is active and running. In this video, we described how cron schedules jobs.
+
+Scheduling a cron Job
+In this video, I'll demonstrate how to schedule a cron job. The first thing we'll do is we'll schedule a system-wide cron job in the system-wide crontab file. So what that means is here at the Linux command line, I'm going to edit the /etc/crontab file. I'll do that using the vi command line text editor. Here in the system-wide crontab file, I'll press Insert. So I can modify the contents within this file. Then I'll add a new line at the bottom. Starting from the left, I have to specify minutes, hours, day of month, month, and day of week, when I want something to run on a recurrent basis. What I want to do is build an autotrail of users that are logged in. Now normally, I might do that once a day, every few hours, once a month but here I'm going to have it run every two minutes. So we can see the result. So because minutes is the first or leftmost place order in a crontab file, I'm going to type */2 for every two minutes. Then I'll type a Spacebar and I'll put in a * for the hour, Spacebar * for the day of month, Spacebar again, * for the month, and * for the day of the week. So I want my commands, which I haven't yet specified to run every two minutes, every hour, every day of the month, every month of the year, and every day of the week.
+The presenter types the following line of code in the Linux Terminal window:
+*/2 * * * * root date >> /logged_in_users.txt; who >> /logged_in_users.txt
+
+Then I'll put in a Spacebar. And now I have to specify the username under which the command will run. I'm going to put in root, then I'll put in a Spacebar. Now I have to put the command or commands that I wish to execute. There could be raw Linux commands or we could reference a shell script. Here I'm just going to use raw Linux commands. So what I want to do is use the date command to append to a file on the root called logged_in_users.txt. I'll type in a ; then the next command I want to execute is I want to run the who command, which shows me who is logged in. And I want to append that to the exact same file. So my file on the root called logged_in_users.txt. Every time this cron job runs, we'll have a date and timestamp, under which we'll then see a list of users that were logged in. Now I'm going to have to go ahead and make sure that we specify that. It looks good. And I'm going to save it. Going to press Esc. Press :wq. And at this point, cron will realize that there is a job that should run every two minutes, and so we will begin doing that at the next cycle. We'll come back and check for that file on the root of the file system in a moment. Because currently, if I tried to cat /logged_in_users.txt, it says there is no such file or directory because that cron job has not yet run.
+
+In the meantime, we're going to create a crontab for the user that's currently logged in, which is root. Root is always allowed to make crontab entries. With some Linux distributions such as Red Hat Enterprise Linux 7, by default root is allowed to configure cron jobs, but other users are not. So to create a user cron job, we would type crontab -e. The "e" means we want to edit. When I press Enter, it's going to put me into a blank new user crontab file. Now it will not be blank if the user already has things they've configured to run on a recurring basis. So I'll press Insert. So I can modify the contents here. Essentially, what I'm going to do here is type * * 1 */2 0. So basically, what I want to happen here is on the first day of every second month, I want something to execute. What I want to execute here is I want the history -c command to run. This will remove the command line history. Now in a user crontab file, you don't specify the username like we did in this system-wide crontab file.
+The presenter types the following line of code in the Linux Terminal window:
+* * 1 */2 0 history -c; echo "History cleared on $(date)" >> ~history.log
+
+So that's why I would write to the command. So I'm going to run history –c; then I want to echo History cleared on. And I want the date, so for that to happen, I'll put in $(date). It will run the date command. Close my double quote. Use my output – >>, and I'm going to go to my home directory, which is referenced by the ~. I want a file there created called history.log. Basically, I want this log file to have a record on the first day of every second month when it clears my history. This is going to be a cumulative file because we are appending to it. So I'm going to press Esc, then :wq to write and quit. Now we can type crontab –l to list any user crontabs, and indeed it shows us what we have just done.
+
+User crontab files are actually stored under /var/spool/cron. So, when I ls that location, you can see that we have a file there for the root crontab for user root. We can also remove user crontabs by typing crontab -r. So now, if I were to type crontab -l, we can see it tells me that there is no crontab for user root. Now let's see, if on the root of the file system our first system-wide cron job has executed yet. I'm going to type cat /logged_in_users.txt, and we can see that it appears that the job has run twice. In this video, we learned how to schedule a cron job.
+
+Managing cron Jobs
+In this video, I'll demonstrate how to manage cron jobs. When we schedule recurring jobs with cron, we have options whereby we can edit those job details. We can even pause cron jobs from executing. The first thing we'll do here at the Linux command prompt is type vi /etc/crontab. This is going to open the system-wide crontab. I'll then press Insert, so I can make changes to this crontab file. There's currently a job that's set to run every two minutes on the first day of every month. However, I want this to happen every day of every month, every two minutes. So I'm going to change that 1 in the third place order position to an *. So now I have a job that's going to run as root that's going to append the Linux date and time as well as a list of who is logged in to a file on the root called logged_in_users. So we can edit system-wide crontab. So, now to save the change, I would press Esc and type :wq. At the user level, I could type crontab -e. This lets me edit my user crontab file, where I'll see any existing cron jobs. Currently, I see a job that's set to run every ten minutes on the first day, every second month. And what it's doing is clearing my command history and then writing a message to a history log file.
+The presenter changes a line of code in the Linux Terminal window to read as follows:
+*/2 * * * * root date >> /logged_in_users.txt; who >> /logged_in_users.txt
+
+Well, what I'm going to do is make sure that this happens every 20 minutes. So I'll press Insert to go into insert mode. And I'll change the */10 to */20, which means every 20 minutes. And I'll go ahead and press Esc and then :wq to write and quit the change. Of course, I could type crontab -l to list any of my crontab jobs as a user. And we can see our changes reflected where our user cron job will run every 20 minutes now instead of its previous configuration of every 10 minutes. We can also remove cron jobs by typing crontab -r. When I do that...if I try to run crontab -l again, it tells me that there is no crontab for user root. Another option is to rename cron files if you don't want jobs in them to be executed. So that means I might rename /etc/crontab to a temporary filename if I don't want any of the system cron jobs to run. The same thing would be true for user cron jobs which gets stored in /var/spool/cron. Currently, there is nothing because we've just removed the user root's cron job. But we could rename the files to something else. And then there is always the option of working with the cron daemon itself if you don't want any cron jobs to be executed on the system.
+The presenter changes a line of code in the Linux Terminal window to read as follows:
+*/20 * 1 */2 0 history -c; echo "History cleared on $(date)" >>~history.log
+
+For example, I'm going to type /sbin/service crond status. We can see the cron daemon is currently active. cron is always set to autostart but I could stop it if I wanted to. I'll bring up the previous command. And I'll change it so that it reads /bin/service crond stop. So I've stopped the cron daemon service. Now understand, of course, that there are no cron jobs at all, whether they're user based or system-wide that will execute on this Linux host. I can verify that that daemon is running by typing /sbin/service crond status. And we'll find that it's listed as being inactive. Now I'm going to start up the daemon again. So my command for that will be /sbin/service crond start. And we'll just check the status again. I'll bring up that command with my up-arrow key. And lo and behold, it's listed as being active and running. There is another way where we might choose to pause the cron daemon instead of actually stopping it. The first thing we'll do is type ps -aux, so I can list all processes including user processes. And the lowercase "x" means processes that were started as background daemons. And I'll pipe that to grep because I'm looking for crond.
+
+We can see that crond is running and it's got a process identifier, or a PID, of 40167. To pause it, I could type kill –STOP – the word stop is in uppercase letters – followed by a Spacebar and our PID of 40167. Now, if I bring up our ps command again, notice in the status column where we used to have an uppercase S, we now have an uppercase T. The uppercase T means that the service or daemon in this case has received a signal to stop running. And, of course, that's a result of our kill command. Now to bring that daemon or service back online, so it's continuing to process scheduled jobs, I would type kill –CONT for continue. That's uppercase letters and our PID of 40167. In this video, we learned how to manage cron jobs.
+
+Working with at to Schedule Jobs
+In this video, I'll demonstrate how to work with the at command to schedule jobs. In Linux, the at command allows us to schedule a one-time nonrecurring job. The first thing we'll do is verify that the at daemon is running. So I'll type /sbin/service atd status. We can see that its status is listed as active and running. So the next thing that we'll do is we'll examine /etc for any files that begin with at. So my command is ls /etc/at*. I can see here that under etc, there is a file called at.deny. If I cat /etc/at.deny file, we'll see, by default, that it's empty. Much as is the case with the cron daemon, we can build an at.allow file as well as an at.deny file where within those files there would be a username, one per line. So, if the at or at.allow file exists, then only the users listed in that allow file are allowed to schedule jobs using the at command. So, in other words, the at.deny file gets ignored. But, if the at.allow file does not exist, which is the default, then users in the at.deny file are not allowed to schedule jobs.
+
+Syntactically, we schedule jobs at the command line by typing at Spacebar and then we specify date and time information. For example, here I'm going to specify 4:00am. So, in other words, I want to run a job at 4:00 a.m. today. Now, if that time today has already passed, then whatever commands I specify – which I have not yet done, will run tomorrow at 4:00 a.m. I'm going to press Enter. Now, when you begin scheduling an at job, it puts you into an interactive at command prompt. From here, it's waiting for us to specify the commands, one per line, that we wish to execute at that specified date and time. All I want to do in my case is run rm -rf /tmp/*. In other words, I want to clear out my temporary file directory. Now, when I press Enter, it then continues because it assumes I have more commands I want to run. If I don't, what I would do is press Ctrl+D. At this point, it tells me that job 1 is now scheduled to run.
+The code in the Linux Terminal window reads as follows:
+[root@rhell /]# at 4:00am
+at> rm -rf /tmp/*
+job 1 at Thu May 28 04:00:00 2015
+[root@rhell /]#
+
+Let's look at a couple of other syntactical examples for scheduling at jobs. I'm going to type at or at noon today. So it can be very English when it comes to the syntax. Maybe what I'll do at noon today is I'll run the who command. And I will use output redirection to create a file on the root called lunch_workers.txt. Now I could continue with more commands but I'll just press Ctrl+D. Now we have job 2 that's been scheduled. I'll do one more example. Here I'll type at 6am +1day. So I want this to be scheduled to run at 6:00 a.m. tomorrow – on the following day. So as always, when I press Enter, I'm then placed into an interactive at command prompt. Maybe what I'll do here is run the who command and use output redirection to create a file on the root called early_birds.txt. And I'll press Ctrl+D to end it. So now I have got job 3 that's been submitted. I could type atq to view up all the queued jobs that I've created. In this video, we learned how to work with at to schedule jobs.
+The code in the Linux Terminal window reads as follows:
+[root@rhell /]# at noon today
+at> who > /lunch_workers.txt
+at> <E0T>
+job 2 at Wed May 27 12:00:00 2015
+[root@rhell /]# at 6am +1day
+at> who > /early_birds.txt
+at> <EOT>
+job 3 at Thu May 28 06:00:00 2015
+[root@rhell /]# atq
+1 Thu May 28 04:00:00 2015 a root
+2 Wed May 27 12:00:00 2015 a root
+3 Thu May 28 06:00:00 2015 a root
+[root@rhell /]
+
+Scheduling an at job
+In this video, I'll demonstrate how to schedule an at job. In Linux, we can use the at command to schedule onetime jobs. The syntax after the at command would be the time that you want the job to execute followed by a space and then the date. For example, at the shell I will type at 10pm Jan 30. So I want this job to execute at 10:00 p.m. on January 30 of this year. When I press Enter, it places me in an at interactive command prompt. All I'm going to do here is use the tar command to create a compressed archive. So I'll type tar -czvf /Backup/yearend.tar.gz. So that's my end result compressed archived file. Spacebar, then I have to tell it what it is I want to archive and compress. So I'm going to put as the last parameter /UserFiles and I'll press Enter. I also want to echo back a statement to a backup log. So I'll type echo "Backup completed on $(date)" because I want the actual date and time when this occurs written to a backup log file. So I'll use my append operator, which is two greater than signs. And I want this backup log file to be under /Backups/ and I want it to be called log.txt.
+
+Really, we could be using any relevant Linux commands to serve our purpose. Now, after I press Enter the second time, I'm still at an "at" in our active command prompt, but I'm finished. That's all I want this job to do on the January 30 at 10:00 p.m. So, to tell that I'm complete, I would press Ctrl+D. And it tells me that job number 10 has been submitted. This tells me that other jobs have been submitted previously on this system. They might have already run, but it's assigning job IDs based on what is already been assigned. So that's why we didn't start a job ID number 1. Going to do another example, so I'll start by typing clear. And this time I'll type at now +1 min. So I want something to execute one minute from now after the job has been submitted. So I'll press Enter and again I'm placed at an interactive at command prompt. What I want to do this time is use the find command, so find / -name. And in double quotes, I'm looking for files on by cblackwell, so I'll put in the name – cblackwell. And I'll use my output redirections symbol and I want to store files owned by user cblackwell under /UserFiles/cblackwell_files.txt.
+The code in the Linux Terminal window reads as follows:
+[root@rhell ~]# at 10pm Jan 30
+at> tar -czvf /Backup/yearend.tar.gz /UserFiles
+at> echo "Backup completed on $(date)" >> /Backups/log.txt
+at> <E0T>
+job 10 at Sat Jan 30 22:00:00 2016
+[root@rhell ~]#
+
+That's all I want that command to do. So I'll press Ctrl+D. Now it tells me job 11 has been submitted. We can also take the contents of a file in which we've already placed Linux commands and feed that into the at command. For instance, I'll clear the screen here. Now I'll type cat /UserFiles/at_commands.txt. This is a file I've previously created and it can be called anything. In it I've got an echo statement and I'm writing that out to a file. And then I'm using the init 6 command to restart the Linux host. So I want to schedule those commands. I want to restart the Linux system, but I want it to happen in the future without me doing it manually. So I'll type at -f. Now this is new. Here, after the –f, we'll add a Spacebar and we'll give it the path and filename of our file with our Linux commands in it. So, here that would be /UserFiles/at_commands.txt, but I still have to specify when I want that to happen. So, in this case, I want that to happen one hour from now, so I'll type now +1 hour. And it tells me that job number 12 was submitted.
+The code in the Linux Terminal window reads as follows:
+[root@rhell ~]# at now +1 min
+At> find / -name "cblackwell" > /UserFiles/cblackwell_files.txt
+at> <E0T>
+job 11 at Wed May 27 12:43:00 2015
+[root@rhell -]#
+
+We can type atq to view jobs that are queued to execute. Here I can see jobs number 10 and 12 are set to go. You might wonder where our previous job went. We had a job that was scheduled to run one minute from now, where it was searching for files owned by user cblackwell. Well, that already executed, so it's been removed from the atq. However, we should be able to verify the existence of a file called /UserFiles/cblackwell_files.txt. So we know that that file does exist. And, if we actually cat that file to view the contents within it, it should list any entries owned by user cblackwell. So the command did run and then it was removed from the atq. In this video, we learnt how to schedule an at job.
+The code in the Linux Terminal window reads as follows:
+[root@rhell ~]# cat /UserFiles/at_commands.txt
+echo "Initiating one time scheduled system restart at $(date)" » /restart.log
+init 6
+[root@rhell ~]# at -f /UserFiles/at_commands.txt now +1 hour
+job 12 at Wed May 27 13:44:00 2015
+[root@rhell ~]# atq
+10 Sat Jan 30 22:00:00 2016 a root
+12 Wed May 27 13:44:00 2015 a root
+[root@rhell ~]# ls /UserFiles/cblackwell_files.txt
+/UserFiles/cblackwell files.txt
+[root@rhell ~]# cat /UserFiles/cblackwell_files.txt
+/var/lib/AccountsService/users/cblackwell
+/var/spool/mail/cblackwell
+/home/cblackwell
+[root@rhell ~]#
+
+Manipulating an at Job
+In this video, I'll demonstrate how to manipulate an at job. The Linux at command allows us to schedule a onetime job. After jobs have been scheduled, we have a number of related commands where we can manipulate those submitted jobs. The first of those commands is atq. When I type in atq and press Enter, I'm viewing any at submitted jobs that have been queued up. Now these jobs haven't yet executed because when an at scheduled job does execute, it gets removed from the queue automatically. Here I can see I have two jobs – job number 10 and job number 12. Now, if you're wondering what happened to 11, it must have already run. Now we can also see specifically when these jobs are scheduled to run. Job number 10 is scheduled to run on Saturday, January 30th – we can see the time information and the year, in this case – 2016. I can see job number 12 is set to run on Wednesday, May 27th. And we can see here at 1:44, it's supposed to run, that's 13:44 – military style time, that's 2015. And again, of course, it's going to run as root just like job number 10 is because whoever submitted those jobs was logged in as root when they were submitted.
+
+Now the only thing about this is I don't know what the job will do. So what I want to figure out is what will job number 10 do when it runs on Saturday, January 30th. To find that out, I'll type at -c Spacebar and then the job ID, which in this case is 10. When I press Enter, you'll notice that there is a lot of environment information listed with this job. So what this means is that the environment that was effective at the time when I scheduled the at command is stored as part of the job,
+
+so it's saved with the schedule job. However, you might wonder where are the commands that will actually be executed? They're listed at the bottom of the output, whether it's one or more lines. Here I see two lines at the bottom. The first uses the tar command to create a compressed archive and the second one uses the echo command to write backup information to a backup log file. So that's actually what is going to happen. But I can't modify those commands from there. So, if I need to actually change what a schedule job is going to do, I need to remove it and then resubmit it. Let's talk about removing jobs from the queue. I'll start by typing clear and then atq once again. If I want to remove job number 10, I would type atrm Spacebar and then the job ID, in this case – number 10. Now, if I type atq and press Enter, we can see that job number 10 is no longer scheduled to run. All we see now that's left is job number 12. In this video, we learnt how to manipulate an at job.
+The presenter points to the following lines of code in the Terminal window:
+tar -czvf /Backup/yearend.tar.gz /UserFiles
+echo "Backup completed on $(date)" >> /Backups/log.txt
+
+Using SystemD Timer Units
+In this video, I'll demonstrate how to work with systemD timer units. In Linux, systemD timers are an alternative instead of scheduling jobs using the old method using cron. So, with systemD timers, there are two files that work together – one is a file that has a .timer extension, the other is a file that has a .service extension. These are text files that we would create under /etc/systemd/system. I'm going to ls that subdirectory path, and we can see there I've already created a file called script10.service as well as script10.timer. Let's look at the contents of those files using the gedit – graphical editor. We'll start with the script10.service file. Here we have a reference under the [Service] section. Now, within these config files, sections are notated with open and close square brackets. So, in the [Service] section, there is a directive here that says, "ExecStart=" and then we've got the path and name of a script file that we want to execute. However, the timing information or the scheduling information is not in the script10.service file. That's where the script10.timer file kicks in. So let's switch over and take a look at our script10.timer file.
+The gedit text editor is open. There are two tabs, script10.timer and script10.service. The script10.service tabbed page is open. The code in the tabbed page reads as follows:
+[Unit]
+Description=Script 10 Logged In Users
+[Service]
+Type=simple
+ExecStart=/UserFiles/Scripts/script10.sh
+[Install]
+WantedBy=multi-user.target
+
+Here, in the [Timer] section, we've got a number of ways that we can determine when the job should be triggered. One is after the system boots. I have got a commented item here that says, "OnBootSec=10 min." This means 10 minutes after the system boots up, we have the option of running a job. I've also got an item here that says, OnCalendar=Mon – for Monday Spacebar 2015-*-1. This means as long as the...Monday is the first day of the month in any month in 2015, we'll run the job. Then I have got timing information that follows that for 10 a.m. Down below, I have another OnCalendar example which references that the job should run every 15 minutes. So the statement is OnCalendar=*:0/15. Let's go back to the command prompt for a moment because we might need to refer to the manual pages when it comes to the syntax for systemD timers. I'm going to type man 7 systemd.time because we're looking for syntax help, not help on a specific command, but rather help on syntax.
+The presenter opens the script10.timer tabbed page. The code in the tabbed page reads as follows:
+[Unit]
+Description=Execute Script 10 every seconds
+[Timer]
+#OnBootSec=10min
+OnCalendar=Mon 2015-*-1 10:00:00
+#OnCalendar=*:0/15
+OnUnitActiveSec=10s
+unit=script10.service
+
+Now that we're looking at the manual page for systemd.time, I see that it explains some of the time spans that can be used when we're using systemD timer units. For example, we can use useconds, which is referenced as usec or us. These are microseconds – millionths of a second – or we can use milliseconds – thousandths of a second. We can use seconds, minutes, hours, days, weeks, months, and years. So what we're seeing here is we can get much more granular with the systemD timer unit than we could when we were scheduling jobs in the past using cron. cron could only get as specific as one minute, that's it. But here we have much more flexibility. As I continue down through the man page for systemd.timer, I can see I get examples on how times are treated and how we might work with oncalendar events and so on. I'm going to press q to get out of that man page.
+
+We can also type at the command line – systemctl list-units. What this will do is list all of the units or jobs that are configured to be activated. And I can keep pressing Enter to go down through line-by-line-by-line. Now, as I go further down through it, eventually we'll see that some of these items are running and some of them have not been able to load – there's some kind of a problem and so therefore, they have failed. We also have the option – I'll press q – of grepping that large list of listing units. What we can do is grep it in our case for script10. Here I can see that we have a timer called script10.timer and it looks like it's loaded and active and waiting for jobs to do. In this video, we learned about systemD timer units.
+
+Scheduling a SystemD Timer Unit Task
+In this video, I'll demonstrate how to work with systemD timer units. In Linux, we have a number of ways that we can schedule commands to run. One is using cron, second is to use at, and our current topic thirdly is to use systemD timer units. SystemD manages services in modern Linux operating systems, but we can also use it to define timers. So that means that we could use systemD timers as an alternative to schedule cron jobs. Here we're going to focus on systemD using timer units for scheduling purposes. Let's begin by taking a look at the contents of an existing script file. I'm going to type cat /UserFiles/Scripts and the script we're interested in is called script10.sh. This is a very simple bash script that's going to echo a message along with the date to a useractivity.txt file under /UserFiles. And then it will use the who command to show us who is logged in. And all that gets appended to the useractivity.txt file. So that file will grow in size over time. If I type pwd, we can see that on our Linux system we are in /etc/systemd/system.
+The Linux Terminal window is open. The presenter types the following command:
+pwd
+The output returned is as follows:
+/etc/systemd/system
+The presenter then types the following command:
+ls script10*
+The output returned is as follows:
+script10.service script10.service~ script10.timer script10.timer~
+
+In here we have to create files. One is a .service file and the other is a matching.timer file. The timer file activates and controls the .service file. I'm going to switch over to the gedit graphical editor where I have got the script10.service file open. Again that file exists inside /etc/systemd/system. I'll type ls script10*, and we can see here that we have got a file called script10.service. Let's examine its contents here. Here it's got a heading called Unit where it's got a directive called Description with a brief description of what the script does. Then there is another heading section in square brackets that's called Service. Here we're defining this as a simple type of service. Then the ExecStart directive points to the path and filename of the script that we want to execute. Finally, in the Install section, we have got a WantedBy directive that says =multi-user.target. That's where we're going to end up having symbolic links to run our service. We'll look at that in a moment. Let's now look at the corresponding script10.timer file, which is in the same subdirectory /etc/systemd/system.
+The presenter navigates to the gedit text editor. The text editor has two tabs, script10.service and script10.timer. The script10.service tabbed page is open. The code in the tabbed page reads as follows:
+[Unit]
+Description=Script 10 Logged In Users
+[Service]
+Type=simple
+ExecStart=/UserFiles/Scripts/script10.sh
+[Install]
+WantedBy=multi-user.target
+
+In the timer file, we have a Unit header section at the top. So the word unit is enclosed within opening and closing square bracket. Here, again, we've got a Description directive and here my description says – Execute Script 10 every minute. Now, in the Timer section down below, we have a number of commented items. There is a directive called OnBootSec=10min. So I have to boot. We could wait 10 minutes before executing our script. We have also got an OnCalendar entry here whereby the OnCalendar entry appears to be attempting to run our script at 10:00 a.m. on the first day of any month in 2015 as long as it's a Monday. However, that line is commented out as is the next line which says OnCalendar=*:0/15, which means every 15 minutes. Instead, what is going to happen is our script is going to execute every 10 seconds. So, I guess, I'll change the description at the top to say every 10 seconds. So it says OnUnitActiveSec=10s. Again that means 10 seconds. Now this is interesting because cron jobs can get more specific than every minute.
+The presenter opens the script10.timer tabbed page. The code in the tabbed page reads as follows:
+[Unit]
+Description=Execute Script 10 every seconds
+[Timer]
+#OnBootSec=10min
+#OnCalendar=Mon 2015-*-1 10:00:00
+#OnCalendar=*:0/15
+onUnitActiveSec=10s
+unit=script10.service
+
+Finally, the unit directive here says unit=script10.service. So there is a reference in the timer file then to the .service file. Now remember, both of those files have to be created in /etc/systemd/system. Now the next thing we need to do is we need to enable our service file. Enabling the service file will create the appropriate symbolic links. So I'll do that by typing systemctl, that's the system control command, Spacebar enable. And I want to enable the service that I've created for script10 so I'm going to type in script10.service. And now I can see that it's used the ln -s command to create a symbolic link under the multi-user.target.wants directory. That's why if we go back to our script10.service file here in the gedit graphical editor that corresponds to the WantedBy, it's pointing to that subdirectory. That's where it's going to find the appropriate symbolic link files. However, back at the command line now what I need to do is I need to make sure that I start my script10.service. So I'm going to type systemctl start script10.service.
+In the Linux Terminal window, the presenter types the following command:
+systemctl enable script10.service
+The output returned is as follows:
+ln -s '/etc/systemd/system/script10.service' '/etc/systemd/system/multi-user.target.wants/script10.service'
+To start the service, he types the following command:
+systemctl start script10.service
+
+At this point, I'm going to keep my eye on /UserFiles/useractivity.txt, that's the file our script is supposed to create. Every 10 seconds it's going to keep appending content to this file. So we can see what this is doing. We can see our last timestamp was Wed May 27 14:30 and 17 seconds. If we cat the file again, we now see it's 27 seconds because this is set to run every 10 seconds. And, if we make sure we wait at least 10 seconds and cat the file again, now this time we've got 37 seconds. So what we're seeing is that we can use systemD timer units as an alternative to scheduling jobs where we might have used cron in the past to accomplish this. In this video, we learned how to work with systemD timer units.
+The presenter then types the following command:
+cat /UserFiles/useractivity.txt
+The output returns a number of log entries.
+
+Convert a cron Job to a SystemD Timer Unit Task
+In this video, I'll demonstrate how to convert a cron job to a systemD timer unit task. cron jobs can be configured for recurring items that we need to run either at the user level or at the system-wide level. Here I'm going to type cat/etc/crontab to view the system-wide crontab file. Where at the bottom, we can see we have an entry that is set to execute script11.sh as user root apparently on Thursdays and Fridays – that would be day four and five of the week – at noon. So what I want to do is I want to not have that run any longer as a cron job. Instead, I want to configure it as a systemD timer unit job. So the first thing I'll need to do then is to prevent that from running as a cron job. The one way to make that happen is to open up the /etc/crontab file and simply either remove or comment out the job that you got to convert to systemD. Here I'm going to put a # symbol in front of my scheduled job for script11, and I'll press Esc, :wq for write and quit. And at this point, that is no longer a scheduled cron job. I'm going to bring back the cat command with my up arrow key so we can verify that that change did take place. And indeed, it did.
+
+Now, when you want to work with systemD timer units, you need to work with a .service file and a .timer file. I've already created these and opened them up in the gedit graphical editor. The script11.service file and the script11.timer file must both be under /etc/systemd/system. You could even have multiple service files that might run different jobs affected by the same timer if appropriate. Let's start by talking about the script11.service file. Here we've got a header called [Unit] and headers are always enclosed in square brackets. Under the [Unit] heading, we've got a directive called Description and then that's followed by an equal sign with a description. In this case, the description is simply Script 11. Then further below in the script11.service file, we have a [Service] heading section, and again, it's in square brackets. Underneath the [Service] heading section, there is a directive called Type. So it says, "Type=simple". This means that I want to treat the job as a recurring job and not a onetime only type of job. Under the Type directive on the next line, we have the ExecStart directive. So it says, "ExecStart=", and then it's got the path and name of the script that I want to execute.
+The gedit text editor is open. The text editor has two tabs, script11.service and script11.timer. The script11.service tabbed page is open. The code in the tabbed page reads as follows:
+[Unit]
+Description=Script 11
+[Service]
+Type=simple
+ExecStart=/UserFiles/Scripts/script11.sh
+[Install]
+WantedBy=multi-user.target
+
+Further down below, I have an [Install] section where there is a directive underneath that says, "WantedBy=multi-user.target." That means that there will be symbolic links to start this in accordance with the timing that we will configure in the timer file under the multi-user.target subdirectory. That is a subdirectory under /etc/systemd/system. Let's switch over to our script11.timer file. In the script11.timer file, we've got a [Unit] heading section with a Description directive underneath. But then we've got a [Timer] section. Remember, sections are denoted with open and close square brackets. Under the [Timer] section, I've got a directive that says, "OnCalendar=Mon-Fri", that's Monday through to and including Friday, 2015-*-1. So this means that within the year 2015, I want to make sure that the Monday to Friday, when I want to execute this job, happens to be on the first day of the month. And if it is, I want the job to execute at 12 o'clock noon. So then 12:00:00. Under the OnCalendar directive, I've got a unit directive that equals the name of my service file, in this case – script11.service.
+The presenter opens the script11.timer tabbed page. The code in the tabbed page reads as follows:
+[Unit]
+Description=Execute Script 11 once hourly
+[Timer]
+OnCalendar=Mon-Fri 2015-*-1 12:00:00
+unit=script11.service
+
+So essentially, I've recreated what I was doing before with cron, except here within systemD. With systemD, we have much more flexibility in terms of specifying the recurring schedule with years or even milliseconds or seconds, because remember, cron can only get as granular as running something every minute. So at this point, once I've got my script11.service and script11.timer file, it's time to enable and start them. Now at the command line, I need to enable and start the service based on the settings in the service file. To do that, I'll type in – sytemctl enable Spacebar and my service file, in this case, is called script11.service. I can see from the resultant output on the screen that it has created a symbolic link for that under the multi-user.target.wants subdirectory. Now what I'll do is make sure it's started. So I'll type systemctl start script11.service. And at this point in time, we have now converted our previously scheduled cron job to a systemD timer unit task. In this video, we learned how to convert a cron job to a systemD timer unit task.
+
+Exercise: Create a Script and Schedule it to run
+Exercise Overview
+
+This exercise focuses primarily on aspects of the file system as well as with scheduling jobs. Specifically, in this exercise, you'll begin by finding all files on the system that contain a specific username. Then you'll list the file ACLs – access control list – for your home directory. Then you're going to create a script that will list any executable files in your home directory. Then comes the scheduling tasks beginning with scheduling a job using the at command, scheduling a job using cron and scheduling a job using a systemD timer unit. Pause the video and give these a whirl. Then come back to the video to see possible solutions.
+
+Solution
+
+Okay, here is how I would approach the exercise tasks. The first thing we were asked to do was to find all files on the system that contain a specific username. I'm going to use the grep command for that. Take note, I'm in the root of the file system. We can see that in my prompt. So, I'm going to type grep -R. I want to perform a recursive search starting from my current position in the hierarchy. And then in quotes, I'm looking for a username that ends with powell. So I'll search for "powell". And after that I'll put in an *. When I press Enter, it's searching for files where within the content of the file it has the text powell. I'll press Ctrl+C to interrupt it. The next thing we needed to do was to list the file ACLs for our home directory. One way to do this is to type getfacl, Spacebar. And, if I want to look at the ACL for my home directory itself, I could use the ~ symbol which references my home directory. When I press Enter, it shows me who the owner, who the group is, what their permissions are, and then the other users or groups that were given permissions. I can also type getfacl ~/*. This way, I'm getting a list of the ACLs for all of the files in my home directory.
+
+I'll clear the screen with clear. The next task we were asked about was to create a script that will list any executable files in your home directory. I'm going to switch over to the gedit – graphical editor – where I've already got a file called executables.sh. This shell script exists in /UserFiles/Scripts. This is one way that we could search for executable files. In this script, we're using the find command to begin searching in the home directory and only in the home directory. So I've used -maxdepth 1. Because remember, find is recursive by nature. But we were asked only to list executable files in the home directory. I'm going to use -executable, which will identify files flagged as executable. And we were asked only to list files not directories. So I've added -type f. We could also have used the test command with the -x switch to test for executables as well. Let's run this script to ensure it retrieves the correct results. So, what I'll do is I'll run /UserFiles/Scripts/executables.sh.
+The executables.sh tabbed page in the gedit text editor is open. The code in the text editor reads as follows:
+#!/bin/bash
+clear
+echo "Executable files in home directory"
+echo "……………………………………………………"
+find ~ -maxdepth 1 -executable -type f
+
+Here it's cleared the screen. And it's showing me a list of executable files in my user home directory. I'll type cd ~ and press Enter to go to my home directory where I'm going to type ls -l just to test our work here. And we can see, in fact, that those files that were returned are indeed flagged as executable. Here in Red Hat Enterprise Linux, they show up as green text. That means that they're executable. The next thing we were asked to do in the exercise was to schedule a job using the at command. The at command is for onetime jobs. To begin, I would type at or "at", Spacebar. And in this case, I want something to happen at 9:00 p.m. on Friday. So I'll type in 9pm Friday. When I press Enter, I'm placed into an interactive at prompt. All I want to do with that point is reboot my Linux system. So I'll put in the init 6 command and press Ctrl+D. Now I can see that that job has been submitted. And I can verify that it's queued up by typing atq. Indeed, there is job number 13. Next the exercise wanted us to schedule a job using cron.
+
+So, in this case, I'll schedule a user cron job. To do that, when I'm logged in as a user, I would type crontab –e, so I can edit my cron jobs. There are none currently configured, so I'll press Insert. And I'm going to type 30 22 * * *. The 30 means 30 minutes, the 22 means the hour – that's 10:00 p.m. – so at 10:30 p.m. And the other three asterisks mean I want something to execute at 10:30 p.m. any week day, any day of the month, every month. What I want to execute is a script under /UserFiles/ called Backup.sh. I'll press Esc and :wq to write and quit. And I'll type crontab –l for list. And we can see, in fact, that the job has been scheduled. Finally, the exercise asked us to schedule a job using a systemD timer unit.
+The gedit text editor is open. There are three tabs: tcp_stats.sh, *tcp_stats.service, and tcp_stats.timer. The tcp_stats.sh tabbed page is open. The code in the tabbed page reads as follows:
+#!/bin/bash
+date >> /tcp_stats.txt
+ifconfig I grep inet I grep -v inet6 >> /tcp_stats.txt
+netstat I grep tcp >> /tcp_stats.txt
+The presenter opens the *tcp_stats.service tabbed page. The code in the tabbed page reads as follows:
+[Unit]
+Description=TCP Stats
+[Service]
+Type=simple
+ExecStart=/UserFiles/Scripts/tcp_stats.sh
+[Install]
+WantedBy=multi-user.target
+
+Let's begin by taking a look at the script that we're going to schedule as a systemD timer unit. Here in gedit, I've got a script open called tcp_stats.sh. This script is going to append the date to a file. Then it's going to do an ifconfig where it's going to filter out lines that contain inet and lines that do not contain inet6. And I will append that to the same file. Then it'll run the netstat command to get network statistics, specifically for tcp. And it'll put that in the tcp_stats.txt file. So this is the core of what we're going to do. We're going to schedule this to happen hourly as a systemD timer unit. Now that means that in /etc/systemd/system, we've got to have both a .service file as well as a .timer file. Here in the .service file, I've got my Unit header with my Description. I've got my Service header where this is set as a Type of simple. I've got my ExecStart directive, which points to the specific script that I want to execute. And for the Install header, I've got it listed as WantedBy=multi-user.target. That's where the symbolic links will be created.
+The presenter opens the tcp_stats.timer tabbed page. The code in the tabbed page reads as follows:
+[Unit]
+Description=Execute tcp_stats.sh hourly
+[Timer]
+OnCalendar=*:0/60
+Unit=tcp_stats.service
+
+If I take a look at my related .timer file, in the Timer section, I've got the OnCalendar directive where it's set to run every 60 minutes or once an hour. For the unit directive, it's pointing back to my tcp_stats.service file. Now, once that's taken place, what we need to do is we need to enable the service and then start it. So this we can do by typing systemctl enable tcp_stats.service – that's a service file that we would have created. The next thing I do after it's created the symbolic link is I would type systemctl start tcp_stats.service. In this exercise, we worked with various aspects of the file system as well as with scheduling jobs.
