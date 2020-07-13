@@ -1,0 +1,177 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200427132910
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: powershell
+Process ID: 11832
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.W3T_rdar.20200427132910.txt
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> vagrant box list
+bento/centos-7.1 (virtualbox, 2.2.2)
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> vagrant status 'idofTheMachine'
+ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x64-mingw32]
+
+C:\Users\naveenkumarve>irb
+irb(main):001:0> var1=11
+irb(main):002:0> var1.kind_of?Integer
+=> true
+irb(main):003:0> var1="jonny quest"
+irb(main):004:0> var1.class
+=> String
+irb(main):005:0> var1
+=> "jonny quest"
+irb(main):006:0> y=20
+irb(main):007:0> y.to_f
+=> 20.0
+irb(main):008:0> y.to_s
+=> "20"
+irb(main):009:0> y.to_i
+=> 20
+irb(main):010:0> y.to_s
+=> "20"
+irb(main):011:0> y.to_s(2)
+=> "10100"
+irb(main):012:0>
+irb(main):013:0> exit
+
+C:\Users\naveenkumarve>cd .\Desktop\ruby
+
+C:\Users\naveenkumarve\Desktop\ruby>noargs.rb
+Enter a and b
+10
+12
+Sum of 10 and 12 is 22
+
+C:\Users\naveenkumarve\Desktop\ruby>cd ..
+
+C:\Users\naveenkumarve\Desktop>cd vaggy
+
+C:\Users\naveenkumarve\Desktop\vaggy>cd boxer
+
+C:\Users\naveenkumarve\Desktop\vaggy\boxer>vagrant init -m
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+
+C:\Users\naveenkumarve\Desktop\vaggy\boxer>vagrant up
+Bringing machine 'vagrant-windows-10-preview' up with 'virtualbox' provider...
+==> vagrant-windows-10-preview: Box 'windows_10_preview' could not be found. Attempting to find and install...
+    vagrant-windows-10-preview: Box Provider: virtualbox
+    vagrant-windows-10-preview: Box Version: >= 0
+==> vagrant-windows-10-preview: Box file was not detected as metadata. Adding it directly...
+==> vagrant-windows-10-preview: Adding box 'windows_10_preview' (v0) for provider: virtualbox
+    vagrant-windows-10-preview: Downloading: windows_10_preview
+    vagrant-windows-10-preview:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file C:/Users/naveenkumarve/Desktop/vaggy/boxer/windows_10_preview
+
+C:\Users\naveenkumarve\Desktop\vaggy\boxer>powershell
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> start-transcript
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.W3T_rdar.20200427132910.txt
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> vagrant box list
+bento/centos-7.1 (virtualbox, 2.2.2)
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> vagrant status 'idofTheMachine'
+The machine with the name 'idofTheMachine' was not found configured for
+this Vagrant environment.
+PS C:\Users\naveenkumarve\Desktop\vaggy\boxer> cd ..
+PS C:\Users\naveenkumarve\Desktop\vaggy> dir
+
+
+    Directory: C:\Users\naveenkumarve\Desktop\vaggy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/4/2020   4:47 PM                .vagrant
+d-----        4/27/2020   1:11 PM                boxer
+d-----        4/20/2020   8:22 PM                multi
+d-----        4/23/2020  11:48 AM                normalnode
+d-----         4/4/2020   3:10 PM                share
+d-----        4/10/2020  11:48 AM                win
+-a----         4/4/2020   3:16 PM            716 install.sh
+-a----         4/4/2020   5:39 PM           3091 Vagrantfile
+
+
+PS C:\Users\naveenkumarve\Desktop\vaggy> cd ..
+PS C:\Users\naveenkumarve\Desktop> ls
+
+
+    Directory: C:\Users\naveenkumarve\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/1/2020   4:13 PM                Active Directory Scripts
+d-----         3/6/2020   1:00 PM                New folder
+d-----        4/28/2020  11:31 AM                packer
+d-----        1/13/2020   6:59 PM                revouninstaller-portable
+d-----        4/26/2020   9:05 PM                ruby
+d-----        4/15/2020   4:59 PM                tester
+d-----        4/20/2020  11:38 PM                vaggy
+-a----       11/11/2019   4:37 PM         624202 Active Directory Scripts.zip
+-a----         4/1/2020   5:11 PM          98492 Book1.xlsx
+-a----         4/1/2020   6:23 PM        7067226 Governance TrackerV1.0 20Feb2020 .xlsx
+-a----        11/1/2019  11:35 AM            955 lusrmgr.lnk
+-a----        4/24/2020   1:23 PM           2411 Microsoft Teams.lnk
+-a----         3/5/2020   5:08 PM           3825 oraservice.sh
+-a----       11/28/2019   1:16 PM         124114 PS1.png
+-a----        2/12/2020  12:23 PM        2352056 Python_PPTs.zip
+-a----        1/20/2020   4:11 PM          77824 SoftScan.exe
+-a----        1/20/2020   8:11 PM          18528 STD Task list - Ver3-Delivery to validate.xlsx
+-a----       10/24/2019   4:01 PM              4 test.txt
+-a----         4/3/2020   9:27 AM        2121291 Vagrant presentation.pptm
+-a----        4/21/2020   2:15 PM           2902 vagrant-error.txt
+-a----       10/24/2019   4:00 PM           1436 Visual Studio Code.lnk
+
+
+PS C:\Users\naveenkumarve\Desktop> cd packer
+PS C:\Users\naveenkumarve\Desktop\packer> packer build .\ubuntu1804.json.
+packer : The term 'packer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ packer build .\ubuntu1804.json.
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (packer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+packer : The term 'packer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:1
++ packer build .\ubuntu1804.json.
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (packer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\packer> packer build ubuntu1804.json
+packer : The term 'packer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ packer build ubuntu1804.json
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (packer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+packer : The term 'packer' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:1
++ packer build ubuntu1804.json
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (packer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+

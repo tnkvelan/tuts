@@ -1,0 +1,772 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200420140935
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: powershell
+Process ID: 23744
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.UOy9SFn0.20200420140935.txt
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant package --base multi_puppetagent-2_1585822452297_70109 --output opensuse.box
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant status
+Current machine states:
+
+puppetagent-1             running (virtualbox)
+puppetagent-2             poweroff (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant destroy
+    puppetagent-2: Are you sure you want to destroy the 'puppetagent-2' VM? [y/N] y
+==> puppetagent-2: Destroying VM and associated drives...
+    puppetagent-1: Are you sure you want to destroy the 'puppetagent-1' VM? [y/N] y
+==> puppetagent-1: Forcing shutdown of VM...
+==> puppetagent-1: Destroying VM and associated drives...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box remove
+This command was not invoked properly. The help for this command is
+available below.
+
+Usage: vagrant box remove <name>
+
+Options:
+
+    -f, --force                      Remove without confirmation.
+        --provider PROVIDER          The specific provider type for the box to remove
+        --box-version VERSION        The specific version of the box to remove
+        --all                        Remove all available versions of the box
+    -h, --help                       Print this help
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box remove --all
+This command was not invoked properly. The help for this command is
+available below.
+
+Usage: vagrant box remove <name>
+
+Options:
+
+    -f, --force                      Remove without confirmation.
+        --provider PROVIDER          The specific provider type for the box to remove
+        --box-version VERSION        The specific version of the box to remove
+        --all                        Remove all available versions of the box
+    -h, --help                       Print this help
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant global-status --prune
+id       name       provider   state   directory
+-----------------------------------------------------------------------------------
+0c60ec9  dockernode virtualbox running C:/Users/naveenkumarve/Desktop/vaggy/testvm
+
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date (use "vagrant global-status --prune" to prune invalid
+entries). To interact with any of the machines, you can go to that
+directory and run Vagrant, or you can use the ID directly with
+Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant status
+Current machine states:
+
+puppetagent-1             not created (virtualbox)
+puppetagent-2             not created (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant destroy
+==> puppetagent-2: VM not created. Moving on...
+==> puppetagent-1: VM not created. Moving on...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant halt
+==> puppetagent-2: VM not created. Moving on...
+==> puppetagent-1: VM not created. Moving on...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant destroy -f
+==> puppetagent-2: VM not created. Moving on...
+==> puppetagent-1: VM not created. Moving on...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> cp Vagrantfile Vagrantfile.bak
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> dir
+
+
+    Directory: C:\Users\naveenkumarve\Desktop\vaggy\multi
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/2/2020   3:02 PM                .vagrant
+d-----        4/20/2020  12:18 PM                replica
+d-----        4/13/2020   4:23 PM                testing
+-a----         4/2/2020   7:40 PM              8 helloworld.txt
+-a----        4/16/2020  10:09 PM            246 ins.sh
+-a----         4/4/2020   3:16 PM            716 install.sh
+-a----        4/20/2020   2:37 PM      569211115 opensuse.box
+-a----        4/17/2020   3:16 PM          70590 output_log.txt
+-a----        4/13/2020   4:41 PM             23 sample.txt
+-a----        4/17/2020   2:33 PM           1766 vagkey
+-a----        4/17/2020   2:33 PM            418 vagkey.pub
+-a----        4/17/2020   3:15 PM            653 Vagrantfile
+-a----        4/17/2020   3:15 PM            653 Vagrantfile.bak
+
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> cls
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox\"
+C:\Program Files\Oracle\VirtualBox\
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vboxmanage list vms
+vboxmanage : The term 'vboxmanage' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ vboxmanage list vms
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vboxmanage:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+vboxmanage : The term 'vboxmanage' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ vboxmanage list vms
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (vboxmanage:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> Set-Item -Path Env:Path -Value ($Env:Path + ";C:\Program Files\Oracle\VirtualBox\")
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vboxmanage list vms
+"testvm_dockernode_1586190750757_25321" {8f6fb2ee-ce9a-4387-bfc9-8fdb95e52884}
+"centos" {aa3a55e0-cde5-40e1-97da-2c5e36ca4094}
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> killall vboxheadless
+killall : The term 'killall' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ killall vboxheadless
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (killall:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+killall : The term 'killall' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ killall vboxheadless
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (killall:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> clear
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> dir
+
+
+    Directory: C:\Users\naveenkumarve\Desktop\vaggy\multi
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/2/2020   3:02 PM                .vagrant
+d-----        4/20/2020  12:18 PM                replica
+d-----        4/13/2020   4:23 PM                testing
+-a----         4/2/2020   7:40 PM              8 helloworld.txt
+-a----        4/16/2020  10:09 PM            246 ins.sh
+-a----         4/4/2020   3:16 PM            716 install.sh
+-a----        4/20/2020   2:37 PM      569211115 opensuse.box
+-a----        4/17/2020   3:16 PM          70590 output_log.txt
+-a----        4/13/2020   4:41 PM             23 sample.txt
+-a----        4/17/2020   2:33 PM           1766 vagkey
+-a----        4/17/2020   2:33 PM            418 vagkey.pub
+-a----        4/17/2020   3:15 PM            653 Vagrantfile
+-a----        4/17/2020   3:15 PM            653 Vagrantfile.bak
+
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box add opensuse .\opensuse.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'opensuse' (v0) for provider:
+    box: Unpacking necessary files from: file://C:/Users/naveenkumarve/Desktop/vaggy/multi/opensuse.box
+    box:
+==> box: Successfully added box 'opensuse' (v0) for 'virtualbox'!
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant init opensuse
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+opensuse         (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant up
+Bringing machine 'puppetagent-1' up with 'virtualbox' provider...
+==> puppetagent-1: Importing base box 'bento/centos-7.2'...
+==> puppetagent-1: Matching MAC address for NAT networking...
+==> puppetagent-1: Checking if box 'bento/centos-7.2' version '2.3.1' is up to date...
+==> puppetagent-1: There was a problem while downloading the metadata for your box
+==> puppetagent-1: to check for updates. This is not an error, since it is usually due
+==> puppetagent-1: to temporary network problems. This is just a warning. The problem
+==> puppetagent-1: encountered was:
+==> puppetagent-1:
+==> puppetagent-1: SSL certificate problem: unable to get local issuer certificate
+==> puppetagent-1:
+==> puppetagent-1: If you want to check for box updates, verify your network connection
+==> puppetagent-1: is valid and try again.
+==> puppetagent-1: Setting the name of the VM: multi_puppetagent-1_1587378599996_99973
+==> puppetagent-1: Vagrant has detected a configuration issue which exposes a
+==> puppetagent-1: vulnerability with the installed version of VirtualBox. The
+==> puppetagent-1: current guest is configured to use an E1000 NIC type for a
+==> puppetagent-1: network adapter which is vulnerable in this version of VirtualBox.
+==> puppetagent-1: Ensure the guest is trusted to use this configuration or update
+==> puppetagent-1: the NIC type using one of the methods below:
+==> puppetagent-1:
+==> puppetagent-1:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> puppetagent-1:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> puppetagent-1: Clearing any previously set network interfaces...
+==> puppetagent-1: Preparing network interfaces based on configuration...
+    puppetagent-1: Adapter 1: nat
+    puppetagent-1: Adapter 2: hostonly
+==> puppetagent-1: Forwarding ports...
+    puppetagent-1: 80 (guest) => 8080 (host) (adapter 1)
+    puppetagent-1: 22 (guest) => 2222 (host) (adapter 1)
+==> puppetagent-1: Booting VM...
+==> puppetagent-1: Waiting for machine to boot. This may take a few minutes...
+    puppetagent-1: SSH address: 127.0.0.1:2222
+    puppetagent-1: SSH username: vagrant
+    puppetagent-1: SSH auth method: private key
+    puppetagent-1: Warning: Connection reset. Retrying...
+    puppetagent-1: Warning: Remote connection disconnect. Retrying...
+    puppetagent-1: Warning: Connection aborted. Retrying...
+    puppetagent-1: Warning: Remote connection disconnect. Retrying...
+    puppetagent-1: Warning: Connection aborted. Retrying...
+    puppetagent-1: Warning: Remote connection disconnect. Retrying...
+    puppetagent-1:
+    puppetagent-1: Vagrant insecure key detected. Vagrant will automatically replace
+    puppetagent-1: this with a newly generated keypair for better security.
+    puppetagent-1:
+    puppetagent-1: Inserting generated public key within guest...
+    puppetagent-1: Removing insecure key from the guest if it's present...
+    puppetagent-1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> puppetagent-1: Machine booted and ready!
+[puppetagent-1] GuestAdditions versions on your host (5.2.10) and guest (5.1.10) do not match.
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.xeonbd.com
+ * extras: mirror.xeonbd.com
+ * updates: mirror.xeonbd.com
+Resolving Dependencies
+--> Running transaction check
+---> Package centos-release.x86_64 0:7-2.1511.el7.centos.2.10 will be updated
+---> Package centos-release.x86_64 0:7-7.1908.0.el7.centos will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch         Version                     Repository  Size
+================================================================================
+Updating:
+ centos-release       x86_64       7-7.1908.0.el7.centos       base        26 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 26 k
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+Public key for centos-release-7-7.1908.0.el7.centos.x86_64.rpm is not installed
+warning: /var/cache/yum/x86_64/7/base/packages/centos-release-7-7.1908.0.el7.centos.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-2.1511.el7.centos.2.10.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+Warning: RPMDB altered outside of yum.
+  Updating   : centos-release-7-7.1908.0.el7.centos.x86_64                  1/2
+  Cleanup    : centos-release-7-2.1511.el7.centos.2.10.x86_64               2/2
+  Verifying  : centos-release-7-7.1908.0.el7.centos.x86_64                  1/2
+  Verifying  : centos-release-7-2.1511.el7.centos.2.10.x86_64               2/2
+
+Updated:
+  centos-release.x86_64 0:7-7.1908.0.el7.centos
+
+Complete!
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.xeonbd.com
+ * extras: mirror.xeonbd.com
+ * updates: mirror.xeonbd.com
+Resolving Dependencies
+--> Running transaction check
+---> Package kernel-devel.x86_64 0:3.10.0-327.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch        Version                Repository           Size
+================================================================================
+Installing:
+ kernel-devel      x86_64      3.10.0-327.el7         C7.2.1511-base       11 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 11 M
+Installed size: 33 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : kernel-devel-3.10.0-327.el7.x86_64                           1/1
+  Verifying  : kernel-devel-3.10.0-327.el7.x86_64                           1/1
+
+Installed:
+  kernel-devel.x86_64 0:3.10.0-327.el7
+
+Complete!
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.xeonbd.com
+ * extras: mirror.xeonbd.com
+ * updates: mirror.xeonbd.com
+Package bzip2-1.0.6-13.el7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package binutils.x86_64 0:2.23.52.0.1-55.el7 will be updated
+---> Package binutils.x86_64 0:2.27-41.base.el7_7.3 will be an update
+---> Package elfutils-libelf-devel.x86_64 0:0.176-2.el7 will be installed
+--> Processing Dependency: elfutils-libelf(x86-64) = 0.176-2.el7 for package: elfutils-libelf-devel-0.176-2.el7.x86_64
+--> Processing Dependency: pkgconfig(zlib) for package: elfutils-libelf-devel-0.176-2.el7.x86_64
+---> Package gcc.x86_64 0:4.8.5-39.el7 will be installed
+--> Processing Dependency: libgomp = 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: cpp = 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: libgcc >= 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-39.el7.x86_64
+---> Package make.x86_64 1:3.82-21.el7 will be updated
+---> Package make.x86_64 1:3.82-24.el7 will be an update
+---> Package perl.x86_64 4:5.16.3-286.el7 will be updated
+---> Package perl.x86_64 4:5.16.3-294.el7_6 will be an update
+--> Processing Dependency: perl-libs = 4:5.16.3-294.el7_6 for package: 4:perl-5.16.3-294.el7_6.x86_64
+--> Running transaction check
+---> Package cpp.x86_64 0:4.8.5-39.el7 will be installed
+---> Package elfutils-libelf.x86_64 0:0.163-3.el7 will be updated
+--> Processing Dependency: elfutils-libelf(x86-64) = 0.163-3.el7 for package: elfutils-libs-0.163-3.el7.x86_64
+---> Package elfutils-libelf.x86_64 0:0.176-2.el7 will be an update
+---> Package glibc-devel.x86_64 0:2.17-292.el7 will be installed
+--> Processing Dependency: glibc-headers = 2.17-292.el7 for package: glibc-devel-2.17-292.el7.x86_64
+--> Processing Dependency: glibc = 2.17-292.el7 for package: glibc-devel-2.17-292.el7.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.17-292.el7.x86_64
+---> Package libgcc.x86_64 0:4.8.5-4.el7 will be updated
+---> Package libgcc.x86_64 0:4.8.5-39.el7 will be an update
+---> Package libgomp.x86_64 0:4.8.5-4.el7 will be updated
+---> Package libgomp.x86_64 0:4.8.5-39.el7 will be an update
+---> Package perl-libs.x86_64 4:5.16.3-286.el7 will be updated
+---> Package perl-libs.x86_64 4:5.16.3-294.el7_6 will be an update
+---> Package zlib-devel.x86_64 0:1.2.7-18.el7 will be installed
+--> Processing Dependency: zlib = 1.2.7-18.el7 for package: zlib-devel-1.2.7-18.el7.x86_64
+--> Running transaction check
+---> Package elfutils-libs.x86_64 0:0.163-3.el7 will be updated
+---> Package elfutils-libs.x86_64 0:0.176-2.el7 will be an update
+--> Processing Dependency: default-yama-scope for package: elfutils-libs-0.176-2.el7.x86_64
+---> Package glibc.x86_64 0:2.17-105.el7 will be updated
+--> Processing Dependency: glibc = 2.17-105.el7 for package: glibc-common-2.17-105.el7.x86_64
+---> Package glibc.x86_64 0:2.17-292.el7 will be an update
+---> Package glibc-headers.x86_64 0:2.17-292.el7 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-292.el7.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.17-292.el7.x86_64
+---> Package zlib.x86_64 0:1.2.7-15.el7 will be updated
+---> Package zlib.x86_64 0:1.2.7-18.el7 will be an update
+--> Running transaction check
+---> Package elfutils-default-yama-scope.noarch 0:0.176-2.el7 will be installed
+---> Package glibc-common.x86_64 0:2.17-105.el7 will be updated
+---> Package glibc-common.x86_64 0:2.17-292.el7 will be an update
+---> Package kernel-headers.x86_64 0:3.10.0-1062.18.1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                       Arch     Version                 Repository
+                                                                           Size
+================================================================================
+Installing:
+ elfutils-libelf-devel         x86_64   0.176-2.el7             base       39 k
+ gcc                           x86_64   4.8.5-39.el7            base       16 M
+Updating:
+ binutils                      x86_64   2.27-41.base.el7_7.3    updates   5.9 M
+ make                          x86_64   1:3.82-24.el7           base      421 k
+ perl                          x86_64   4:5.16.3-294.el7_6      base      8.0 M
+Installing for dependencies:
+ cpp                           x86_64   4.8.5-39.el7            base      5.9 M
+ elfutils-default-yama-scope   noarch   0.176-2.el7             base       33 k
+ glibc-devel                   x86_64   2.17-292.el7            base      1.1 M
+ glibc-headers                 x86_64   2.17-292.el7            base      687 k
+ kernel-headers                x86_64   3.10.0-1062.18.1.el7    updates   8.8 M
+ zlib-devel                    x86_64   1.2.7-18.el7            base       50 k
+Updating for dependencies:
+ elfutils-libelf               x86_64   0.176-2.el7             base      194 k
+ elfutils-libs                 x86_64   0.176-2.el7             base      291 k
+ glibc                         x86_64   2.17-292.el7            base      3.6 M
+ glibc-common                  x86_64   2.17-292.el7            base       11 M
+ libgcc                        x86_64   4.8.5-39.el7            base      102 k
+ libgomp                       x86_64   4.8.5-39.el7            base      158 k
+ perl-libs                     x86_64   4:5.16.3-294.el7_6      base      688 k
+ zlib                          x86_64   1.2.7-18.el7            base       90 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages (+6 Dependent packages)
+Upgrade  3 Packages (+8 Dependent packages)
+
+Total download size: 64 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+http://mirror.tino.org/centos/7.7.1908/os/x86_64/Packages/elfutils-libelf-0.176-2.el7.x86_64.rpm: [Errno 14] HTTP Error 403 - Forbidden
+Trying other mirror.
+To address this issue please refer to the below knowledge base article
+
+https://access.redhat.com/solutions/69319
+
+If above article doesn't help to resolve this issue please create a bug on https://bugs.centos.org/
+
+--------------------------------------------------------------------------------
+Total                                              1.0 MB/s |  64 MB  01:05
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libgcc-4.8.5-39.el7.x86_64                                  1/30
+  Updating   : glibc-common-2.17-292.el7.x86_64                            2/30
+  Updating   : glibc-2.17-292.el7.x86_64                                   3/30
+warning: /etc/nsswitch.conf created as /etc/nsswitch.conf.rpmnew
+  Updating   : zlib-1.2.7-18.el7.x86_64                                    4/30
+  Updating   : elfutils-libelf-0.176-2.el7.x86_64                          5/30
+  Installing : zlib-devel-1.2.7-18.el7.x86_64                              6/30
+  Updating   : binutils-2.27-41.base.el7_7.3.x86_64                        7/30
+  Installing : cpp-4.8.5-39.el7.x86_64                                     8/30
+  Updating   : 4:perl-libs-5.16.3-294.el7_6.x86_64                         9/30
+  Updating   : 4:perl-5.16.3-294.el7_6.x86_64                             10/30
+  Updating   : libgomp-4.8.5-39.el7.x86_64                                11/30
+  Installing : kernel-headers-3.10.0-1062.18.1.el7.x86_64                 12/30
+  Installing : glibc-headers-2.17-292.el7.x86_64                          13/30
+  Installing : glibc-devel-2.17-292.el7.x86_64                            14/30
+  Installing : elfutils-default-yama-scope-0.176-2.el7.noarch             15/30
+  Updating   : elfutils-libs-0.176-2.el7.x86_64                           16/30
+  Installing : gcc-4.8.5-39.el7.x86_64                                    17/30
+  Installing : elfutils-libelf-devel-0.176-2.el7.x86_64                   18/30
+  Updating   : 1:make-3.82-24.el7.x86_64                                  19/30
+  Cleanup    : elfutils-libs-0.163-3.el7.x86_64                           20/30
+  Cleanup    : 4:perl-5.16.3-286.el7.x86_64                               21/30
+  Cleanup    : 4:perl-libs-5.16.3-286.el7.x86_64                          22/30
+  Cleanup    : binutils-2.23.52.0.1-55.el7.x86_64                         23/30
+  Cleanup    : zlib-1.2.7-15.el7.x86_64                                   24/30
+  Cleanup    : elfutils-libelf-0.163-3.el7.x86_64                         25/30
+  Cleanup    : 1:make-3.82-21.el7.x86_64                                  26/30
+  Cleanup    : libgomp-4.8.5-4.el7.x86_64                                 27/30
+  Cleanup    : glibc-common-2.17-105.el7.x86_64                           28/30
+  Cleanup    : glibc-2.17-105.el7.x86_64                                  29/30
+  Cleanup    : libgcc-4.8.5-4.el7.x86_64                                  30/30
+  Verifying  : elfutils-default-yama-scope-0.176-2.el7.noarch              1/30
+  Verifying  : gcc-4.8.5-39.el7.x86_64                                     2/30
+  Verifying  : kernel-headers-3.10.0-1062.18.1.el7.x86_64                  3/30
+  Verifying  : zlib-devel-1.2.7-18.el7.x86_64                              4/30
+  Verifying  : 4:perl-libs-5.16.3-294.el7_6.x86_64                         5/30
+  Verifying  : zlib-1.2.7-18.el7.x86_64                                    6/30
+  Verifying  : libgcc-4.8.5-39.el7.x86_64                                  7/30
+  Verifying  : libgomp-4.8.5-39.el7.x86_64                                 8/30
+  Verifying  : 1:make-3.82-24.el7.x86_64                                   9/30
+  Verifying  : glibc-common-2.17-292.el7.x86_64                           10/30
+  Verifying  : binutils-2.27-41.base.el7_7.3.x86_64                       11/30
+  Verifying  : 4:perl-5.16.3-294.el7_6.x86_64                             12/30
+  Verifying  : cpp-4.8.5-39.el7.x86_64                                    13/30
+  Verifying  : elfutils-libelf-devel-0.176-2.el7.x86_64                   14/30
+  Verifying  : glibc-2.17-292.el7.x86_64                                  15/30
+  Verifying  : glibc-devel-2.17-292.el7.x86_64                            16/30
+  Verifying  : elfutils-libs-0.176-2.el7.x86_64                           17/30
+  Verifying  : elfutils-libelf-0.176-2.el7.x86_64                         18/30
+  Verifying  : glibc-headers-2.17-292.el7.x86_64                          19/30
+  Verifying  : elfutils-libs-0.163-3.el7.x86_64                           20/30
+  Verifying  : elfutils-libelf-0.163-3.el7.x86_64                         21/30
+  Verifying  : zlib-1.2.7-15.el7.x86_64                                   22/30
+  Verifying  : 4:perl-libs-5.16.3-286.el7.x86_64                          23/30
+  Verifying  : 4:perl-5.16.3-286.el7.x86_64                               24/30
+  Verifying  : glibc-2.17-105.el7.x86_64                                  25/30
+  Verifying  : libgomp-4.8.5-4.el7.x86_64                                 26/30
+  Verifying  : libgcc-4.8.5-4.el7.x86_64                                  27/30
+  Verifying  : 1:make-3.82-21.el7.x86_64                                  28/30
+  Verifying  : binutils-2.23.52.0.1-55.el7.x86_64                         29/30
+  Verifying  : glibc-common-2.17-105.el7.x86_64                           30/30
+
+Installed:
+  elfutils-libelf-devel.x86_64 0:0.176-2.el7      gcc.x86_64 0:4.8.5-39.el7
+
+Dependency Installed:
+  cpp.x86_64 0:4.8.5-39.el7
+  elfutils-default-yama-scope.noarch 0:0.176-2.el7
+  glibc-devel.x86_64 0:2.17-292.el7
+  glibc-headers.x86_64 0:2.17-292.el7
+  kernel-headers.x86_64 0:3.10.0-1062.18.1.el7
+  zlib-devel.x86_64 0:1.2.7-18.el7
+
+Updated:
+  binutils.x86_64 0:2.27-41.base.el7_7.3        make.x86_64 1:3.82-24.el7
+  perl.x86_64 4:5.16.3-294.el7_6
+
+Dependency Updated:
+  elfutils-libelf.x86_64 0:0.176-2.el7    elfutils-libs.x86_64 0:0.176-2.el7
+  glibc.x86_64 0:2.17-292.el7             glibc-common.x86_64 0:2.17-292.el7
+  libgcc.x86_64 0:4.8.5-39.el7            libgomp.x86_64 0:4.8.5-39.el7
+  perl-libs.x86_64 4:5.16.3-294.el7_6     zlib.x86_64 0:1.2.7-18.el7
+
+Complete!
+Copy iso file C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
+Mounting Virtualbox Guest Additions ISO to: /mnt
+mount: /dev/loop0 is write-protected, mounting read-only
+Installing Virtualbox Guest Additions 5.2.10 - guest version is 5.1.10
+Verifying archive integrity... All good.
+Uncompressing VirtualBox 5.2.10 Guest Additions for Linux........
+VirtualBox Guest Additions installer
+Removing installed version 5.1.10 of VirtualBox Guest Additions...
+Copying additional installer modules ...
+Installing additional modules ...
+VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel modules.
+VirtualBox Guest Additions: Look at /var/log/vboxadd-setup.log to find out what went wrong
+VirtualBox Guest Additions: Running kernel modules will not be replaced until the system is restarted
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: modprobe vboxsf failed
+An error occurred during installation of VirtualBox Guest Additions 5.2.10. Some functionality may not work as intended.
+In most cases it is OK that the "Window System drivers" installation failed.
+Redirecting to /bin/systemctl start  vboxadd.service
+Redirecting to /bin/systemctl start  vboxadd-service.service
+Job for vboxadd-service.service failed because the control process exited with error code. See "systemctl status vboxadd-service.service" and "journalctl -xe" for detai
+ls.
+Unmounting Virtualbox Guest Additions ISO from: /mnt
+==> puppetagent-1: Checking for guest additions in VM...
+    puppetagent-1: The guest additions on this VM do not match the installed version of
+    puppetagent-1: VirtualBox! In most cases this is fine, but in rare cases it can
+    puppetagent-1: prevent things such as shared folders from working properly. If you see
+    puppetagent-1: shared folder errors, please make sure the guest additions within the
+    puppetagent-1: virtual machine match the version of VirtualBox you have installed on
+    puppetagent-1: your host and reload your VM.
+    puppetagent-1:
+    puppetagent-1: Guest Additions Version: 5.1.10
+    puppetagent-1: VirtualBox Version: 5.2
+==> puppetagent-1: Setting hostname...
+==> puppetagent-1: Configuring and enabling network interfaces...
+==> puppetagent-1: Mounting shared folders...
+    puppetagent-1: /home/vagrant/test => C:/Users/naveenkumarve/Desktop/vaggy/multi
+Vagrant was unable to mount VirtualBox shared folders. This is usually
+because the filesystem "vboxsf" is not available. This filesystem is
+made available via the VirtualBox Guest Additions and kernel module.
+Please verify that these guest additions are properly installed in the
+guest. This is not a bug in Vagrant and is usually caused by a faulty
+Vagrant box. For context, the command attempted was:
+
+mount -t vboxsf -o uid=1000,gid=1000 home_vagrant_test /home/vagrant/test
+
+The error output from the command was:
+
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant status
+Current machine states:
+
+puppetagent-1             running (virtualbox)
+puppetagent-2             not created (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant ssh-config
+Host puppetagent-1
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/Users/naveenkumarve/Desktop/vaggy/multi/.vagrant/machines/puppetagent-1/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+
+The provider for this Vagrant-managed machine is reporting that it
+is not yet ready for SSH. Depending on your provider this can carry
+different meanings. Make sure your machine is created and running and
+try again. Additionally, check the output of `vagrant status` to verify
+that the machine is in the state that you expect. If you continue to
+get this error message, please view the documentation for the provider
+you're using.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant ssh
+This command requires a specific VM name to target in a multi-VM environment.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant ssh puppetagent-1
+
+[vagrant@puppetagent-1 ~]$
+[vagrant@puppetagent-1 ~]$ pwd
+/home/vagrant
+[vagrant@puppetagent-1 ~]$ whoami
+vagrant
+[vagrant@puppetagent-1 ~]$ ls -l
+total 0
+drwxr-xr-x. 2 root root 6 Apr 20 10:46 test
+[vagrant@puppetagent-1 ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box add opensuse .\opensuse.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'opensuse' (v0) for provider:
+    box: Unpacking necessary files from: file://C:/Users/naveenkumarve/Desktop/vaggy/multi/opensuse.box
+    box:
+The box you're attempting to add already exists. Remove it before
+adding it again or add it with the `--force` flag.
+
+Name: opensuse
+Provider: virtualbox
+Version: 0
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+opensuse         (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box outdated
+Checking if box 'bento/centos-7.2' version '2.3.1' is up to date...
+There was a problem while downloading the metadata for your box
+to check for updates. This is not an error, since it is usually due
+to temporary network problems. This is just a warning. The problem
+encountered was:
+
+SSL certificate problem: unable to get local issuer certificate
+
+If you want to check for box updates, verify your network connection
+is valid and try again.
+Checking if box 'suse/sles11sp3' version '0.1.8' is up to date...
+There was a problem while downloading the metadata for your box
+to check for updates. This is not an error, since it is usually due
+to temporary network problems. This is just a warning. The problem
+encountered was:
+
+SSL certificate problem: unable to get local issuer certificate
+
+If you want to check for box updates, verify your network connection
+is valid and try again.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant up centos7
+The machine with the name 'centos7' was not found configured for
+this Vagrant environment.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant snapshot list
+==> puppetagent-1: No snapshots have been taken yet!
+    puppetagent-1: You can take a snapshot using `vagrant snapshot save`. Note that
+    puppetagent-1: not all providers support this yet. Once a snapshot is taken, you
+    puppetagent-1: can list them using this command, and use commands such as
+    puppetagent-1: `vagrant snapshot restore` to go back to a certain snapshot.
+==> puppetagent-2: VM not created. Moving on...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant init multi_puppetagent-2_1585822452297_70109 .\opensuse.box
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> rm .\Vagrantfile
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant init multi_puppetagent-2_1585822452297_70109 .\opensuse.box
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'multi_puppetagent-2_1585822452297_70109' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'multi_puppetagent-2_1585822452297_70109' (v0) for provider: virtualbox
+    default: Downloading: .opensuse.box
+    default:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file C:/Users/naveenkumarve/Desktop/vaggy/multi/.opensuse.box
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant init  --force multi_puppetagent-2_1585822452297_70109 .\opensuse.box
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'multi_puppetagent-2_1585822452297_70109' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'multi_puppetagent-2_1585822452297_70109' (v0) for provider: virtualbox
+    default: Downloading: .opensuse.box
+    default:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file C:/Users/naveenkumarve/Desktop/vaggy/multi/.opensuse.box
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+centos7          (virtualbox, 0)
+opensuse         (virtualbox, 0)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant global-status
+id       name          provider   state    directory
+---------------------------------------------------------------------------------------
+0c60ec9  dockernode    virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/testvm
+88107e0  puppetagent-1 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date (use "vagrant global-status --prune" to prune invalid
+entries). To interact with any of the machines, you can go to that
+directory and run Vagrant, or you can use the ID directly with
+Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant halt
+==> puppetagent-2: VM not created. Moving on...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant status
+Current machine states:
+
+puppetagent-1             poweroff (virtualbox)
+puppetagent-2             not created (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant global-status
+id       name          provider   state    directory
+---------------------------------------------------------------------------------------
+0c60ec9  dockernode    virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/testvm
+88107e0  puppetagent-1 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date (use "vagrant global-status --prune" to prune invalid
+entries). To interact with any of the machines, you can go to that
+directory and run Vagrant, or you can use the ID directly with
+Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant destroy 0c60ec9
+    dockernode: Are you sure you want to destroy the 'dockernode' VM? [y/N] y
+==> dockernode: Destroying VM and associated drives...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant destroy 88107e0
+    puppetagent-1: Are you sure you want to destroy the 'puppetagent-1' VM? [y/N]
+    puppetagent-1: Are you sure you want to destroy the 'puppetagent-1' VM? [y/N]
+    puppetagent-1: Are you sure you want to destroy the 'puppetagent-1' VM? [y/N]
+    puppetagent-1: Are you sure you want to destroy the 'puppetagent-1' VM? [y/N] y
+==> puppetagent-1: Destroying VM and associated drives...
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200420221229
+**********************

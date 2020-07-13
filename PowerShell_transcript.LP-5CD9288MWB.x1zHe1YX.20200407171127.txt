@@ -1,0 +1,235 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200407171127
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: powershell
+Process ID: 24316
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.x1zHe1YX.20200407171127.txt
+PS C:\Users\naveenkumarve\Desktop\vaggy\testvm> vagrant halt
+==> dockernode: Attempting graceful shutdown of VM...
+PS C:\Users\naveenkumarve\Desktop\vaggy\testvm> vagrant reload
+==> dockernode: Checking if box 'suse/sles11sp3' version '0.1.8' is up to date...
+==> dockernode: There was a problem while downloading the metadata for your box
+==> dockernode: to check for updates. This is not an error, since it is usually due
+==> dockernode: to temporary network problems. This is just a warning. The problem
+==> dockernode: encountered was:
+==> dockernode:
+==> dockernode: SSL certificate problem: unable to get local issuer certificate
+==> dockernode:
+==> dockernode: If you want to check for box updates, verify your network connection
+==> dockernode: is valid and try again.
+==> dockernode: Clearing any previously set forwarded ports...
+==> dockernode: Fixed port collision for 22 => 2222. Now on port 2201.
+==> dockernode: Vagrant has detected a configuration issue which exposes a
+==> dockernode: vulnerability with the installed version of VirtualBox. The
+==> dockernode: current guest is configured to use an E1000 NIC type for a
+==> dockernode: network adapter which is vulnerable in this version of VirtualBox.
+==> dockernode: Ensure the guest is trusted to use this configuration or update
+==> dockernode: the NIC type using one of the methods below:
+==> dockernode:
+==> dockernode:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> dockernode:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> dockernode: Clearing any previously set network interfaces...
+==> dockernode: Preparing network interfaces based on configuration...
+    dockernode: Adapter 1: nat
+    dockernode: Adapter 2: hostonly
+==> dockernode: Forwarding ports...
+    dockernode: 22 (guest) => 2201 (host) (adapter 1)
+==> dockernode: Booting VM...
+==> dockernode: Waiting for machine to boot. This may take a few minutes...
+    dockernode: SSH address: 127.0.0.1:2201
+    dockernode: SSH username: vagrant
+    dockernode: SSH auth method: private key
+    dockernode: Warning: Connection aborted. Retrying...
+    dockernode: Warning: Remote connection disconnect. Retrying...
+    dockernode: Warning: Connection aborted. Retrying...
+    dockernode: Warning: Remote connection disconnect. Retrying...
+    dockernode: Warning: Connection aborted. Retrying...
+==> dockernode: Machine booted and ready!
+[dockernode] No Virtualbox Guest Additions installation found.
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/repodata/repomd.xml':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/content':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Error building the cache:Warning: Disabling repository 'docker-ee-stable' because of the above error.
+Loading repository data...
+Reading installed packages...
+
+[|] Valid metadata not found at specified URL(s)
+'virtualbox-guest-kmp-default' not found in package names. Trying capabilities.
+No provider of 'virtualbox-guest-kmp-default' found.
+'virtualbox-guest-tools' not found in package names. Trying capabilities.
+'virtualbox-guest-x11' not found in package names. Trying capabilities.
+No provider of 'virtualbox-guest-tools' found.
+No provider of 'virtualbox-guest-x11' found.
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/repodata/repomd.xml':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/content':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Error building the cache:
+Warning: Disabling repository 'docker-ee-stable' because of the above error.
+Loading repository data...
+Reading installed packages...
+[|] Valid metadata not found at specified URL(s)
+'devel_C_C++' not found in package names. Trying capabilities.
+No provider of 'pattern:devel_C_C++' found.
+'devel_basis' not found in package names. Trying capabilities.
+'devel_kernel' not found in package names. Trying capabilities.
+No provider of 'pattern:devel_basis' found.
+No provider of 'pattern:devel_kernel' found.
+==> dockernode: Checking for guest additions in VM...
+    dockernode: No guest additions were detected on the base box for this VM! Guest
+    dockernode: additions are required for forwarded ports, shared folders, host only
+    dockernode: networking, and more. If SSH fails on this machine, please install
+    dockernode: the guest additions and repackage the box to continue.
+    dockernode:
+    dockernode: This is not an error message; everything may continue to work properly,
+    dockernode: in which case you may ignore this message.
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+zypper --non-interactive install -t pattern devel_C_C++ devel_basis devel_kernel
+
+Stdout from the command:
+
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Abort, retry, ignore? [a/r/i/? shows all options] (a): a
+Warning: Disabling repository 'docker-ee-stable' because of the above error.
+Loading repository data...
+Reading installed packages...
+'devel_C_C++' not found in package names. Trying capabilities.
+'devel_basis' not found in package names. Trying capabilities.
+'devel_kernel' not found in package names. Trying capabilities.
+
+
+Stderr from the command:
+
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/repodata/repomd.xml':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Download (curl) error for 'https://storebits.docker.com/ee/sles/sub-555-55-555/sles/15/x86_64/stable-19.03/content':
+Error code: Unrecognized error
+Error message: SSL certificate problem, verify that the CA cert is OK. Details:
+error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+
+Error building the cache:
+[|] Valid metadata not found at specified URL(s)
+No provider of 'pattern:devel_C_C++' found.
+No provider of 'pattern:devel_basis' found.
+No provider of 'pattern:devel_kernel' found.
+PS C:\Users\naveenkumarve\Desktop\vaggy\testvm> vagrant ssh-config dockernode
+Host dockernode
+  HostName 127.0.0.1
+  User vagrant
+  Port 2201
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/Users/naveenkumarve/Desktop/vaggy/testvm/.vagrant/machines/dockernode/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+PS C:\Users\naveenkumarve\Desktop\vaggy\testvm> cd ..
+PS C:\Users\naveenkumarve\Desktop\vaggy> cd .\multi\
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant up puppetagent-1
+Bringing machine 'puppetagent-1' up with 'virtualbox' provider...
+==> puppetagent-1: Checking if box 'bento/centos-7.2' version '2.3.1' is up to date...
+==> puppetagent-1: There was a problem while downloading the metadata for your box
+==> puppetagent-1: to check for updates. This is not an error, since it is usually due
+==> puppetagent-1: to temporary network problems. This is just a warning. The problem
+==> puppetagent-1: encountered was:
+==> puppetagent-1:
+==> puppetagent-1: SSL certificate problem: unable to get local issuer certificate
+==> puppetagent-1:
+==> puppetagent-1: If you want to check for box updates, verify your network connection
+==> puppetagent-1: is valid and try again.
+==> puppetagent-1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> puppetagent-1: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant ssh-config puppetagent-1
+Host puppetagent-1
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/Users/naveenkumarve/Desktop/vaggy/multi/.vagrant/machines/puppetagent-1/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+PS C:\Users\naveenkumarve\Desktop\vaggy\multi> vagrant reload puppetagent-1
+==> puppetagent-1: Attempting graceful shutdown of VM...
+==> puppetagent-1: Checking if box 'bento/centos-7.2' version '2.3.1' is up to date...
+==> puppetagent-1: There was a problem while downloading the metadata for your box
+==> puppetagent-1: to check for updates. This is not an error, since it is usually due
+==> puppetagent-1: to temporary network problems. This is just a warning. The problem
+==> puppetagent-1: encountered was:
+==> puppetagent-1:
+==> puppetagent-1: SSL certificate problem: unable to get local issuer certificate
+==> puppetagent-1:
+==> puppetagent-1: If you want to check for box updates, verify your network connection
+==> puppetagent-1: is valid and try again.
+==> puppetagent-1: Clearing any previously set forwarded ports...
+==> puppetagent-1: Vagrant has detected a configuration issue which exposes a
+==> puppetagent-1: vulnerability with the installed version of VirtualBox. The
+==> puppetagent-1: current guest is configured to use an E1000 NIC type for a
+==> puppetagent-1: network adapter which is vulnerable in this version of VirtualBox.
+==> puppetagent-1: Ensure the guest is trusted to use this configuration or update
+==> puppetagent-1: the NIC type using one of the methods below:
+==> puppetagent-1:
+==> puppetagent-1:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> puppetagent-1:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> puppetagent-1: Clearing any previously set network interfaces...
+==> puppetagent-1: Preparing network interfaces based on configuration...
+    puppetagent-1: Adapter 1: nat
+    puppetagent-1: Adapter 2: hostonly
+==> puppetagent-1: Forwarding ports...
+    puppetagent-1: 22 (guest) => 2222 (host) (adapter 1)
+==> puppetagent-1: Booting VM...
+==> puppetagent-1: Waiting for machine to boot. This may take a few minutes...
+    puppetagent-1: SSH address: 127.0.0.1:2222
+    puppetagent-1: SSH username: vagrant
+    puppetagent-1: SSH auth method: private key
+==> puppetagent-1: Machine booted and ready!
+[puppetagent-1] GuestAdditions 5.2.10 running --- OK.
+==> puppetagent-1: Checking for guest additions in VM...
+==> puppetagent-1: Setting hostname...
+==> puppetagent-1: Configuring and enabling network interfaces...
+==> puppetagent-1: Mounting shared folders...
+    puppetagent-1: /home/vagrant/test => C:/Users/naveenkumarve/Desktop/vaggy/multi
+==> puppetagent-1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> puppetagent-1: flag to force provisioning. Provisioners marked to run always will still run.

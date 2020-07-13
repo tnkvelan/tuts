@@ -1,0 +1,677 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200404140209
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19756
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.+sRAAqZu.20200404140209.txt
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant destroy
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Destroying VM and associated drives...
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+suse/sles11sp3   (virtualbox, 0.1.8)
+ubuntu/trusty64  (virtualbox, 20190514.0.0)
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box remove ubuntu/trusty64
+Removing box 'ubuntu/trusty64' (v20190514.0.0) with provider 'virtualbox'...
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+suse/sles11sp3   (virtualbox, 0.1.8)
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init 3scale/docker
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init 3scale/docker
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box '3scale/docker' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box '3scale/docker' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/3scale/docker"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'centos/7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'centos/7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/centos/7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'generic/centos7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'generic/centos7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/generic/centos7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init phusion/ubuntu-14.04-amd64
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init phusion/ubuntu-14.04-amd64
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'phusion/ubuntu-14.04-amd64' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'phusion/ubuntu-14.04-amd64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/phusion/ubuntu-14.04-amd64"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init geerlingguy/centos7
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init geerlingguy/centos7
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'geerlingguy/centos7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'geerlingguy/centos7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/geerlingguy/centos7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant reload
+==> default: VM not created. Moving on...
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init puppetlabs/centos-6.6-64-puppet
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'puppetlabs/centos-6.6-64-puppet' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'puppetlabs/centos-6.6-64-puppet' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/puppetlabs/centos-6.6-64-puppet"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init bento/centos-6.7
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'bento/centos-6.7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'bento/centos-6.7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/bento/centos-6.7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init FEBO/suse15 \
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy>   --box-version 0.1
+At line:1 char:5
++   --box-version 0.1
++     ~
+Missing expression after unary operator '--'.
+
+At line:1 char:5
++   --box-version 0.1
++     ~~~~~~~~~~~
+Unexpected token 'box-version' in expression or statement.
+At line:1 char:5
++   --box-version 0.1
++     ~
+Missing expression after unary operator '--'.
+
+At line:1 char:5
++   --box-version 0.1
++     ~~~~~~~~~~~
+Unexpected token 'box-version' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init FEBO/suse15
+Vagrant failed to initialize at a very early stage:
+
+There is a syntax error in the following Vagrantfile. The syntax error
+message is reproduced below for convenience:
+
+C:/users/naveenkumarve/desktop/vaggy/Vagrantfile:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  # accessing "localhost:8080" will access port 80 on
+                        ^
+PS C:\users\naveenkumarve\desktop\vaggy> cd multi
+PS C:\users\naveenkumarve\desktop\vaggy\multi> vagrant up
+Bringing machine 'puppetagent-1' up with 'virtualbox' provider...
+Bringing machine 'puppetagent-2' up with 'virtualbox' provider...
+==> puppetagent-1: Checking if box 'bento/centos-7.2' version '2.3.1' is up to date...
+==> puppetagent-1: There was a problem while downloading the metadata for your box
+==> puppetagent-1: to check for updates. This is not an error, since it is usually due
+==> puppetagent-1: to temporary network problems. This is just a warning. The problem
+==> puppetagent-1: encountered was:
+==> puppetagent-1:
+==> puppetagent-1: SSL certificate problem: unable to get local issuer certificate
+==> puppetagent-1:
+==> puppetagent-1: If you want to check for box updates, verify your network connection
+==> puppetagent-1: is valid and try again.
+==> puppetagent-1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> puppetagent-1: flag to force provisioning. Provisioners marked to run always will still run.
+==> puppetagent-2: Checking if box 'suse/sles11sp3' version '0.1.8' is up to date...
+==> puppetagent-2: There was a problem while downloading the metadata for your box
+==> puppetagent-2: to check for updates. This is not an error, since it is usually due
+==> puppetagent-2: to temporary network problems. This is just a warning. The problem
+==> puppetagent-2: encountered was:
+==> puppetagent-2:
+==> puppetagent-2: SSL certificate problem: unable to get local issuer certificate
+==> puppetagent-2:
+==> puppetagent-2: If you want to check for box updates, verify your network connection
+==> puppetagent-2: is valid and try again.
+==> puppetagent-2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> puppetagent-2: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\users\naveenkumarve\desktop\vaggy\multi> vagrant ssh-config puppetagent-2
+Host puppetagent-2
+  HostName 127.0.0.1
+  User vagrant
+  Port 2200
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/users/naveenkumarve/desktop/vaggy/multi/.vagrant/machines/puppetagent-2/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+PS C:\users\naveenkumarve\desktop\vaggy\multi> vagrant halt
+==> puppetagent-2: Attempting graceful shutdown of VM...
+==> puppetagent-1: Attempting graceful shutdown of VM...
+PS C:\users\naveenkumarve\desktop\vaggy\multi> cd ..
+PS C:\users\naveenkumarve\desktop\vaggy> cls
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init febo/rhel7
+Vagrant failed to initialize at a very early stage:
+
+There is a syntax error in the following Vagrantfile. The syntax error
+message is reproduced below for convenience:
+
+C:/users/naveenkumarve/desktop/vaggy/Vagrantfile:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  # accessing "localhost:8080" will access port 80 on
+                        ^
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init febo/rhel7 \ vagrant up
+Vagrant failed to initialize at a very early stage:
+
+There is a syntax error in the following Vagrantfile. The syntax error
+message is reproduced below for convenience:
+
+C:/users/naveenkumarve/desktop/vaggy/Vagrantfile:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  # accessing "localhost:8080" will access port 80 on
+                        ^
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant plugin list
+vagrant-vbguest (0.23.0, global)
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant global-status
+id       name          provider   state    directory
+--------------------------------------------------------------------------------------
+436e924  puppetagent-1 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+a86597f  puppetagent-2 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date (use "vagrant global-status --prune" to prune invalid
+entries). To interact with any of the machines, you can go to that
+directory and run Vagrant, or you can use the ID directly with
+Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant global-status --prune
+id       name          provider   state    directory
+--------------------------------------------------------------------------------------
+436e924  puppetagent-1 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+a86597f  puppetagent-2 virtualbox poweroff C:/Users/naveenkumarve/Desktop/vaggy/multi
+
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date (use "vagrant global-status --prune" to prune invalid
+entries). To interact with any of the machines, you can go to that
+directory and run Vagrant, or you can use the ID directly with
+Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant -m init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> cat .\.vagrant\
+cat : Could not find a part of the path 'C:\users\naveenkumarve\desktop\vaggy\.vagrant\'.
+At line:1 char:1
++ cat .\.vagrant\
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\users\naveen...vaggy\.vagrant\:String) [Get-Content], 
+DirectoryNotFoundException
+    + FullyQualifiedErrorId : GetContentReaderDirectoryNotFoundError,Microsoft.PowerShell.Commands.GetContentCommand
+cat : Could not find a part of the path 'C:\users\naveenkumarve\desktop\vaggy\.vagrant\'.
+At line:1 char:1
++ cat .\.vagrant\
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\users\naveen...vaggy\.vagrant\:String) [Get-Content], DirectoryNotFo
+   undException
+    + FullyQualifiedErrorId : GetContentReaderDirectoryNotFoundError,Microsoft.PowerShell.Commands.GetContentCommand
+
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'base' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'base' (v0) for provider: virtualbox
+    default: Downloading: base
+    default:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file C:/users/naveenkumarve/desktop/vaggy/base
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\.vagrant\
+Confirm
+The item at C:\users\naveenkumarve\desktop\vaggy\.vagrant\ has children and the Recurse parameter was not specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+Y
+rm : Directory C:\users\naveenkumarve\desktop\vaggy\.vagrant\ cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\.vagrant\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\users\naveen...vaggy\.vagrant\:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+rm : Directory C:\users\naveenkumarve\desktop\vaggy\.vagrant\ cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\.vagrant\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\users\naveen...vaggy\.vagrant\:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\.vagrant\
+PS C:\users\naveenkumarve\desktop\vaggy> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy> ls
+
+
+    Directory: C:\users\naveenkumarve\desktop\vaggy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/2/2020   3:01 PM                multi
+d-----         4/4/2020   3:10 PM                share
+-a----         4/2/2020   7:40 PM              8 helloworld.txt
+-a----         4/4/2020   3:16 PM            716 install.sh
+
+
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant init centos/7
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'centos/7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'centos/7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/centos/7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'hashicorp/boot2docker' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'hashicorp/boot2docker' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/hashicorp/boot2docker"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> export SSL_CERT_FILE=C:\Temp\ca-bundle.crt
+export : The term 'export' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ export SSL_CERT_FILE=C:\Temp\ca-bundle.crt
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (export:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+export : The term 'export' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ export SSL_CERT_FILE=C:\Temp\ca-bundle.crt
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (export:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\users\naveenkumarve\desktop\vaggy> SSL_CERT_FILE=C:\Temp\ca-bundle.crt
+SSL_CERT_FILE=C:\Temp\ca-bundle.crt : The term 'SSL_CERT_FILE=C:\Temp\ca-bundle.crt' is not recognized as the name of a 
+cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:1
++ SSL_CERT_FILE=C:\Temp\ca-bundle.crt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (SSL_CERT_FILE=C:\Temp\ca-bundle.crt:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+SSL_CERT_FILE=C:\Temp\ca-bundle.crt : The term 'SSL_CERT_FILE=C:\Temp\ca-bundle.crt' is not recognized as the name of
+a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included,
+verify that the path is correct and try again.
+At line:1 char:1
++ SSL_CERT_FILE=C:\Temp\ca-bundle.crt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (SSL_CERT_FILE=C:\Temp\ca-bundle.crt:String) [], CommandNotFoundExceptio
+   n
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant update
+Usage: vagrant [options] <command> [<args>]
+
+    -v, --version                    Print the version and exit.
+    -h, --help                       Print this help.
+
+Common commands:
+     box             manages boxes: installation, removal, etc.
+     cloud           manages everything related to Vagrant Cloud
+     destroy         stops and deletes all traces of the vagrant machine
+     global-status   outputs status Vagrant environments for this user
+     halt            stops the vagrant machine
+     help            shows the help for a subcommand
+     init            initializes a new Vagrant environment by creating a Vagrantfile
+     login
+     package         packages a running vagrant environment into a box
+     plugin          manages plugins: install, uninstall, update, etc.
+     port            displays information about guest port mappings
+     powershell      connects to machine via powershell remoting
+     provision       provisions the vagrant machine
+     push            deploys code in this environment to a configured destination
+     rdp             connects to machine via RDP
+     reload          restarts vagrant machine, loads new Vagrantfile configuration
+     resume          resume a suspended vagrant machine
+     snapshot        manages snapshots: saving, restoring, etc.
+     ssh             connects to machine via SSH
+     ssh-config      outputs OpenSSH valid configuration to connect to the machine
+     status          outputs status of the vagrant machine
+     suspend         suspends the machine
+     up              starts and provisions the vagrant environment
+     upload          upload to machine via communicator
+     validate        validates the Vagrantfile
+     vbguest         plugin: vagrant-vbguest: install VirtualBox Guest Additions to the machine
+     version         prints current and latest Vagrant version
+     winrm           executes commands on a machine via WinRM
+     winrm-config    outputs WinRM configuration to connect to the machine
+
+For help on any individual command run `vagrant COMMAND -h`
+
+Additional subcommands are available, but are either more advanced
+or not commonly used. To see all subcommands, run the command
+`vagrant list-commands`.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant list-commands
+Below is a listing of all available Vagrant commands and a brief
+description of what they do.
+
+box             manages boxes: installation, removal, etc.
+cap             checks and executes capability
+cloud           manages everything related to Vagrant Cloud
+destroy         stops and deletes all traces of the vagrant machine
+docker-exec     attach to an already-running docker container
+docker-logs     outputs the logs from the Docker container
+docker-run      run a one-off command in the context of a container
+global-status   outputs status Vagrant environments for this user
+halt            stops the vagrant machine
+help            shows the help for a subcommand
+init            initializes a new Vagrant environment by creating a Vagrantfile
+list-commands   outputs all available Vagrant subcommands, even non-primary ones
+login
+package         packages a running vagrant environment into a box
+plugin          manages plugins: install, uninstall, update, etc.
+port            displays information about guest port mappings
+powershell      connects to machine via powershell remoting
+provider        show provider for this environment
+provision       provisions the vagrant machine
+push            deploys code in this environment to a configured destination
+rdp             connects to machine via RDP
+reload          restarts vagrant machine, loads new Vagrantfile configuration
+resume          resume a suspended vagrant machine
+rsync           syncs rsync synced folders to remote machine
+rsync-auto      syncs rsync synced folders automatically when files change
+snapshot        manages snapshots: saving, restoring, etc.
+ssh             connects to machine via SSH
+ssh-config      outputs OpenSSH valid configuration to connect to the machine
+status          outputs status of the vagrant machine
+suspend         suspends the machine
+up              starts and provisions the vagrant environment
+upload          upload to machine via communicator
+validate        validates the Vagrantfile
+vbguest         plugin: vagrant-vbguest: install VirtualBox Guest Additions to the machine
+version         prints current and latest Vagrant version
+winrm           executes commands on a machine via WinRM
+winrm-config    outputs WinRM configuration to connect to the machine
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'hashicorp/boot2docker' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'hashicorp/boot2docker' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/hashicorp/boot2docker"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'ubuntu/trusty64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/ubuntu/trusty64"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant destroy
+==> default: VM not created. Moving on...
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box add centos/7
+The box 'centos/7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/centos/7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box add ubuntu/trusty64
+The box 'ubuntu/trusty64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/ubuntu/trusty64"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy> mkdir dock
+
+
+    Directory: C:\users\naveenkumarve\desktop\vaggy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/4/2020   5:59 PM                dock
+
+
+PS C:\users\naveenkumarve\desktop\vaggy> cd dock
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant init generic/rhel7
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'generic/rhel7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'generic/rhel7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/generic/rhel7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant status
+Current machine states:
+
+default                   not created (virtualbox)
+
+The environment has not yet been created. Run `vagrant up` to
+create the environment. If a machine is not created, only the
+default provider will be shown. So if a provider is not listed,
+then the machine is not created for that environment.
+PS C:\users\naveenkumarve\desktop\vaggy\dock> ls
+
+
+    Directory: C:\users\naveenkumarve\desktop\vaggy\dock
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         4/4/2020   6:04 PM                .vagrant
+-a----         4/4/2020   6:03 PM           3089 Vagrantfile
+
+
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'generic/rhel7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'generic/rhel7' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/generic/rhel7"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant box add centos7 https://github.com/holms/vagrant-centos7-box/releases/download/7.1.1503.001/CentOS-7.1.1503-x86_64-netboot.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'centos7' (v0) for provider:
+    box: Downloading: https://github.com/holms/vagrant-centos7-box/releases/download/7.1.1503.001/CentOS-7.1.1503-x86_64-netboot.box
+    box:
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy\dock> rm *
+Confirm
+The item at C:\users\naveenkumarve\desktop\vaggy\dock\.vagrant has children and the Recurse parameter was not specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+&Yes  Yes to &All  &No  No to A&ll  &Suspend
+A
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant init hashicorp/bionic64
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'hashicorp/bionic64' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'hashicorp/bionic64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/hashicorp/bionic64"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant init hashicorp/bionic64
+`Vagrantfile` already exists in this directory. Remove it before
+running `vagrant init`.
+PS C:\users\naveenkumarve\desktop\vaggy\dock> rm .\Vagrantfile
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant init hashicorp/bionic64
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+PS C:\users\naveenkumarve\desktop\vaggy\dock> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'hashicorp/bionic64' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+The box 'hashicorp/bionic64' could not be found or
+could not be accessed in the remote catalog. If this is a private
+box on HashiCorp's Vagrant Cloud, please verify you're logged in via
+`vagrant login`. Also, please double-check the name. The expanded
+URL and error message are shown below:
+
+URL: ["https://vagrantcloud.com/hashicorp/bionic64"]
+Error: SSL certificate problem: unable to get local issuer certificate
+PS C:\users\naveenkumarve\desktop\vaggy\dock> exit
+**********************
+Windows PowerShell transcript end
+End time: 20200404190805
+**********************

@@ -1,0 +1,135 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200403191627
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 19756
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.k_V8DlGx.20200403191627.txt
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant -v
+Vagrant 2.2.7
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+suse/sles11sp3   (virtualbox, 0.1.8)
+ubuntu/trusty64  (virtualbox, 20190514.0.0)
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant ssh-config puppetagent-1
+The machine with the name 'puppetagent-1' was not found configured for
+this Vagrant environment.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant ssh-config default
+The provider for this Vagrant-managed machine is reporting that it
+is not yet ready for SSH. Depending on your provider this can carry
+different meanings. Make sure your machine is created and running and
+try again. Additionally, check the output of `vagrant status` to verify
+that the machine is in the state that you expect. If you continue to
+get this error message, please view the documentation for the provider
+you're using.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant ssh-config
+The provider for this Vagrant-managed machine is reporting that it
+is not yet ready for SSH. Depending on your provider this can carry
+different meanings. Make sure your machine is created and running and
+try again. Additionally, check the output of `vagrant status` to verify
+that the machine is in the state that you expect. If you continue to
+get this error message, please view the documentation for the provider
+you're using.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant status
+Current machine states:
+
+default                   poweroff (virtualbox)
+
+The VM is powered off. To restart the VM, simply run `vagrant up`
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'ubuntu/trusty64' version '20190514.0.0' is up to date...
+==> default: There was a problem while downloading the metadata for your box
+==> default: to check for updates. This is not an error, since it is usually due
+==> default: to temporary network problems. This is just a warning. The problem
+==> default: encountered was:
+==> default:
+==> default: SSL certificate problem: unable to get local issuer certificate
+==> default:
+==> default: If you want to check for box updates, verify your network connection
+==> default: is valid and try again.
+==> default: Clearing any previously set forwarded ports...
+==> default: Fixed port collision for 22 => 2222. Now on port 2201.
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 (guest) => 2201 (host) (adapter 1)
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2201
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Remote connection disconnect. Retrying...
+    default: Warning: Connection aborted. Retrying...
+==> default: Machine booted and ready!
+[default] GuestAdditions 5.2.10 running --- OK.
+==> default: Checking for guest additions in VM...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/naveenkumarve/Desktop/vaggy
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant ssh-config
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2201
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/users/naveenkumarve/desktop/vaggy/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+PS C:\users\naveenkumarve\desktop\vaggy> clear
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant -v
+Vagrant 2.2.7
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant box list
+bento/centos-7.2 (virtualbox, 2.3.1)
+suse/sles11sp3   (virtualbox, 0.1.8)
+ubuntu/trusty64  (virtualbox, 20190514.0.0)
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant status
+Current machine states:
+
+default                   running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.
+PS C:\users\naveenkumarve\desktop\vaggy> vagrant ssh-config
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2201
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile C:/users/naveenkumarve/desktop/vaggy/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+PS C:\users\naveenkumarve\desktop\vaggy> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200404115125
+**********************

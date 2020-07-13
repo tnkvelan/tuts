@@ -1,0 +1,1710 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200421190940
+Username: HCLTECH\NaveenkumarVe
+RunAs User: HCLTECH\NaveenkumarVe
+Configuration Name: 
+Machine: LP-5CD9288MWB (Microsoft Windows NT 10.0.17134.0)
+Host Application: powershell
+Process ID: 21420
+PSVersion: 5.1.17134.858
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.858
+BuildVersion: 10.0.17134.858
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\naveenkumarve\Documents\PowerShell_transcript.LP-5CD9288MWB.ud9mWbb_.20200421190940.txt
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant plugin install vagrant-disksize
+Installing the 'vagrant-disksize' plugin. This can take a few minutes...
+Fetching: vagrant-disksize-0.1.3.gem (100%)
+Successfully uninstalled bcrypt-3.1.13
+Successfully uninstalled faraday-1.0.1
+Successfully uninstalled hashie-4.1.0
+Successfully uninstalled jwt-2.2.1
+Successfully uninstalled minitest-5.14.0
+Successfully uninstalled multipart-post-2.1.1
+Successfully uninstalled multi_xml-0.6.0
+Removing oauth
+Successfully uninstalled oauth-0.5.4
+Successfully uninstalled oauth2-1.4.4
+Successfully uninstalled omniauth-1.9.1
+Successfully uninstalled omniauth-facebook-6.0.0
+Successfully uninstalled omniauth-github-1.4.0
+Successfully uninstalled omniauth-google-apps-0.1.0
+Successfully uninstalled omniauth-oauth-1.1.0
+Successfully uninstalled omniauth-oauth2-1.6.0
+Successfully uninstalled omniauth-openid-1.0.1
+Successfully uninstalled omniauth-twitter-1.4.0
+Successfully uninstalled orm_adapter-0.5.0
+Removing rackup
+Successfully uninstalled rack-2.2.2
+Successfully uninstalled rack-openid-1.3.1
+Successfully uninstalled ruby-openid-2.3.0
+Successfully uninstalled ruby-openid-apps-discovery-1.2.0
+Successfully uninstalled thread_safe-0.3.6
+Successfully uninstalled tzinfo-1.2.7
+Successfully uninstalled warden-1.2.8
+Successfully uninstalled zeitwerk-2.3.0
+Installed the plugin 'vagrant-disksize (0.1.3)'!
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant plugin list
+vagrant-disksize (0.1.3, global)
+vagrant-vbguest (0.23.0, global)
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant halt
+Installing plugins: vagrant-hostmanager
+Installing the 'vagrant-hostmanager' plugin. This can take a few minutes...
+Fetching: vagrant-hostmanager-1.8.9.gem (100%)
+Installed the plugin 'vagrant-hostmanager (1.8.9)'!
+Vagrant failed to initialize at a very early stage:
+
+There was an error loading a Vagrantfile. The file being loaded
+and the error message are shown below. This is usually caused by
+a syntax error.
+
+Path: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/Vagrantfile
+Line number: 29
+Message: NameError: undefined local variable or method `plugin_installed' for main:Object
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant restart
+Usage: vagrant [options] <command> [<args>]
+
+    -v, --version                    Print the version and exit.
+    -h, --help                       Print this help.
+
+Common commands:
+     box             manages boxes: installation, removal, etc.
+     cloud           manages everything related to Vagrant Cloud
+     destroy         stops and deletes all traces of the vagrant machine
+     global-status   outputs status Vagrant environments for this user
+     halt            stops the vagrant machine
+     help            shows the help for a subcommand
+     hostmanager     plugin: vagrant-hostmanager: manages the /etc/hosts file within a multi-machine environment
+     init            initializes a new Vagrant environment by creating a Vagrantfile
+     login
+     package         packages a running vagrant environment into a box
+     plugin          manages plugins: install, uninstall, update, etc.
+     port            displays information about guest port mappings
+     powershell      connects to machine via powershell remoting
+     provision       provisions the vagrant machine
+     push            deploys code in this environment to a configured destination
+     rdp             connects to machine via RDP
+     reload          restarts vagrant machine, loads new Vagrantfile configuration
+     resume          resume a suspended vagrant machine
+     snapshot        manages snapshots: saving, restoring, etc.
+     ssh             connects to machine via SSH
+     ssh-config      outputs OpenSSH valid configuration to connect to the machine
+     status          outputs status of the vagrant machine
+     suspend         suspends the machine
+     up              starts and provisions the vagrant environment
+     upload          upload to machine via communicator
+     validate        validates the Vagrantfile
+     vbguest         plugin: vagrant-vbguest: install VirtualBox Guest Additions to the machine
+     version         prints current and latest Vagrant version
+     winrm           executes commands on a machine via WinRM
+     winrm-config    outputs WinRM configuration to connect to the machine
+
+For help on any individual command run `vagrant COMMAND -h`
+
+Additional subcommands are available, but are either more advanced
+or not commonly used. To see all subcommands, run the command
+`vagrant list-commands`.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant resume
+==> default: Waiting for machine to boot. This may take a few minutes...
+The guest machine entered an invalid state while waiting for it
+to boot. Valid states are 'restoring, running'. The machine is in the
+'poweroff' state. Please verify everything is configured
+properly and try again.
+
+If the provider you're using has a GUI that comes with it,
+it is often helpful to open that and watch the machine, since the
+GUI often has more helpful error messages than Vagrant can retrieve.
+For example, if you're using VirtualBox, run `vagrant up` while the
+VirtualBox GUI is open.
+
+The primary issue for this error is that the provider you're using
+is not properly configured. This is very rarely a Vagrant issue.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant status
+Current machine states:
+
+default                   poweroff (virtualbox)
+
+The VM is powered off. To restart the VM, simply run `vagrant up`
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # Plugins
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> #
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # Check if the first argument to the vagrant
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # command is plugin or not to avoid the loop
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> if ARGV[0] != 'plugin'
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   # Define the plugins in an array format
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   required_plugins = [
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     'vagrant-vbguest', 'vagrant-hostmanager', 
+    'vagrant-disksize'
+vagrant-vbguest
+vagrant-hostmanager
+vagrant-disksize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   ]         
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   plugins_to_install = required_plugins.select { |plugin| not Vagrant.has_plugin? plugin }
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : EmptyPipeElement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   if not plugins_to_install.empty?
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     puts "Installing plugins: #{plugins_to_install.join(' ')}"
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     if system "vagrant plugin install #{plugins_to_install.join(' ')}"
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       exec "vagrant #{ARGV.join(' ')}"
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     else
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       abort "Installation of one or more plugins has failed. Aborting."
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     end
+
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   end
+end# Plugins
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> #
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # Check if the first argument to the vagrant
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # command is plugin or not to avoid the loop
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> if ARGV[0] != 'plugin'
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   # Define the plugins in an array format
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   required_plugins = [
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     'vagrant-vbguest', 'vagrant-hostmanager', 
+    'vagrant-disksize'
+vagrant-vbguest
+vagrant-hostmanager
+vagrant-disksize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   ]         
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   plugins_to_install = required_plugins.select { |plugin| not Vagrant.has_plugin? plugin }
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : EmptyPipeElement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   if not plugins_to_install.empty?
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     puts "Installing plugins: #{plugins_to_install.join(' ')}"
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     if system "vagrant plugin install #{plugins_to_install.join(' ')}"
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       exec "vagrant #{ARGV.join(' ')}"
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     else
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       abort "Installation of one or more plugins has failed. Aborting."
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     end
+
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   end
+end# Plugins
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> #
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # Check if the first argument to the vagrant
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # command is plugin or not to avoid the loop
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> if ARGV[0] != 'plugin'
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   # Define the plugins in an array format
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   required_plugins = [
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     'vagrant-vbguest', 'vagrant-hostmanager', 
+    'vagrant-disksize'
+vagrant-vbguest
+vagrant-hostmanager
+vagrant-disksize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   ]         
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   plugins_to_install = required_plugins.select { |plugin| not Vagrant.has_plugin? plugin }
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : EmptyPipeElement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   if not plugins_to_install.empty?
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     puts "Installing plugins: #{plugins_to_install.join(' ')}"
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     if system "vagrant plugin install #{plugins_to_install.join(' ')}"
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       exec "vagrant #{ARGV.join(' ')}"
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     else
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       abort "Installation of one or more plugins has failed. Aborting."
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     end
+
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   end
+end# Plugins
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end# Plugins
++ ~~~~
+Unexpected token 'end#' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> #
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # Check if the first argument to the vagrant
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> # command is plugin or not to avoid the loop
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> if ARGV[0] != 'plugin'
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+At line:1 char:3
++ if ARGV[0] != 'plugin'
++   ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   # Define the plugins in an array format
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   required_plugins = [
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+required_plugins : The term 'required_plugins' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:3
++   required_plugins = [
++   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (required_plugins:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     'vagrant-vbguest', 'vagrant-hostmanager', 
+    'vagrant-disksize'
+vagrant-vbguest
+vagrant-hostmanager
+vagrant-disksize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   ]         
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+] : The term ']' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:3
++   ]
++   ~
+    + CategoryInfo          : ObjectNotFound: (]:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   plugins_to_install = required_plugins.select { |plugin| not Vagrant.has_plugin? plugin }
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+At line:1 char:50
++   plugins_to_install = required_plugins.select { |plugin| not Vagrant ...
++                                                  ~
+An empty pipe element is not allowed.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : EmptyPipeElement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   if not plugins_to_install.empty?
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+At line:1 char:5
++   if not plugins_to_install.empty?
++     ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     puts "Installing plugins: #{plugins_to_install.join(' ')}"
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+puts : The term 'puts' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     puts "Installing plugins: #{plugins_to_install.join(' ')}"
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (puts:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     if system "vagrant plugin install #{plugins_to_install.join(' ')}"
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+At line:1 char:7
++     if system "vagrant plugin install #{plugins_to_install.join(' ')} ...
++       ~
+Missing '(' after 'if' in if statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfStatement
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       exec "vagrant #{ARGV.join(' ')}"
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+exec : The term 'exec' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       exec "vagrant #{ARGV.join(' ')}"
++       ~~~~
+    + CategoryInfo          : ObjectNotFound: (exec:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     else
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+else : The term 'else' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     else
++     ~~~~
+    + CategoryInfo          : ObjectNotFound: (else:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>       abort "Installation of one or more plugins has failed. Aborting."
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+abort : The term 'abort' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:7
++       abort "Installation of one or more plugins has failed. Aborting ...
++       ~~~~~
+    + CategoryInfo          : ObjectNotFound: (abort:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     end
+
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+At line:1 char:8
++     end
++        ~
+Missing statement block after 'end'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   end
+end
+
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:4
++ end
++    ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end
++ ~~~
+Script command clause 'end' has already been defined.
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:4
++ end
++    ~
+Missing statement block after 'end'.
+
+At line:2 char:1
++ end
++ ~~~
+Script command clause 'end' has already been defined.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+[default] GuestAdditions 5.2.10 running --- OK.
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/naveenkumarve/Desktop/vaggy/normalnode
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant ssh
+Last login: Tue Apr 21 11:12:21 2020
+[vagrant@cent1 ~]$ ifconfig
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::a00:27ff:fef6:b007  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:f6:b0:07  txqueuelen 1000  (Ethernet)
+        RX packets 999  bytes 124541 (121.6 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 731  bytes 134345 (131.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.43.68  netmask 255.255.255.0  broadcast 192.168.43.255
+        inet6 fe80::a00:27ff:fe62:4256  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:62:42:56  txqueuelen 1000  (Ethernet)
+        RX packets 70  bytes 6055 (5.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 23  bytes 3210 (3.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[vagrant@cent1 ~]$ hostname
+cent1
+[vagrant@cent1 ~]$ df
+Filesystem              1K-blocks      Used Available Use% Mounted on
+/dev/mapper/centos-root  40313620   1598908  38714712   4% /
+devtmpfs                   241096         0    241096   0% /dev
+tmpfs                      250540         0    250540   0% /dev/shm
+tmpfs                      250540      4356    246184   2% /run
+tmpfs                      250540         0    250540   0% /sys/fs/cgroup
+/dev/sda1                  508588    121848    386740  24% /boot
+vagrant                 482863100 186985640 295877460  39% /vagrant
+[vagrant@cent1 ~]$ free -G
+free: invalid option -- 'G'
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+ -k, --kilo          show output in kilobytes
+ -m, --mega          show output in megabytes
+ -g, --giga          show output in gigabytes
+     --tera          show output in terabytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see free(1).
+[vagrant@cent1 ~]$ free -g
+              total        used        free      shared  buff/cache   available
+Mem:              0           0           0           0           0           0
+Swap:             0           0           0
+[vagrant@cent1 ~]$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   39G  1.6G   37G   4% /
+devtmpfs                 236M     0  236M   0% /dev
+tmpfs                    245M     0  245M   0% /dev/shm
+tmpfs                    245M  4.3M  241M   2% /run
+tmpfs                    245M     0  245M   0% /sys/fs/cgroup
+/dev/sda1                497M  119M  378M  24% /boot
+vagrant                  461G  179G  283G  39% /vagrant
+[vagrant@cent1 ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Attempting graceful shutdown of VM...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection reset. Retrying...
+    default: Warning: Remote connection disconnect. Retrying...
+==> default: Machine booted and ready!
+[default] GuestAdditions 5.2.10 running --- OK.
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/naveenkumarve/Desktop/vaggy/normalnode
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant ssh
+Last login: Tue Apr 21 14:12:29 2020 from 10.0.2.2
+[vagrant@cent1 ~]$ du
+4       ./.ssh
+28      .
+[vagrant@cent1 ~]$ free -g
+              total        used        free      shared  buff/cache   available
+Mem:              0           0           0           0           0           0
+Swap:             0           0           0
+[vagrant@cent1 ~]$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   39G  1.6G   37G   4% /
+devtmpfs                 236M     0  236M   0% /dev
+tmpfs                    245M     0  245M   0% /dev/shm
+tmpfs                    245M  4.3M  241M   2% /run
+tmpfs                    245M     0  245M   0% /sys/fs/cgroup
+/dev/sda1                497M  119M  378M  24% /boot
+vagrant                  461G  179G  283G  39% /vagrant
+[vagrant@cent1 ~]$ Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant ssh
+VM must be running to open SSH connection. Run `vagrant up`
+to start the virtual machine.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Disk cannot be decreased in size. 30720 MB requested but disk is already 40960 MB.
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+[default] GuestAdditions 5.2.10 running --- OK.
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/naveenkumarve/Desktop/vaggy/normalnode
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+vm:
+* The following settings shouldn't exist: customize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+Vagrant:
+* Unknown configuration section 'customize'.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+Vagrant failed to initialize at a very early stage:
+
+There was an error loading a Vagrantfile. The file being loaded
+and the error message are shown below. This is usually caused by
+a syntax error.
+
+Path: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/Vagrantfile
+Line number: 29
+Message: NameError: undefined local variable or method `config' for main:Object
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+Vagrant:
+* Unknown configuration section 'customize'.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+vm:
+* The following settings shouldn't exist: customize
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Attempting graceful shutdown of VM...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for cleanup before exiting...
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> unless File.exist?(file_to_disk)
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>     config.customize ['createhd', '--filename', file_to_disk, '--size', 500 * 1024]
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode>   end
+  config.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:3
++   config.customize ['storageattach', :id, '--storagectl', 'SATA Contr ...
++   ~~~~~~~~~~~~~~~~
+Unexpected token 'config.customize' in expression or statement.
+At line:1 char:6
++   end
++      ~
+Missing statement block after 'end'.
+
+At line:2 char:3
++   config.customize ['storageattach', :id, '--storagectl', 'SATA Contr ...
++   ~~~~~~~~~~~~~~~~
+Unexpected token 'config.customize' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> wget https://gitlab.com/Danny_Pham/WriteBash.com/raw/master/Install/06-Script_install_LAMP_PHP_7.2_on_CentOS_7.sh -O /home/install.sh
+>> TerminatingError(Invoke-WebRequest): "The request was aborted: Could not create SSL/TLS secure channel."
+wget : The request was aborted: Could not create SSL/TLS secure channel.
+At line:1 char:1
++ wget https://gitlab.com/Danny_Pham/WriteBash.com/raw/master/Install/0 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+wget : The request was aborted: Could not create SSL/TLS secure channel.
+At line:1 char:1
++ wget https://gitlab.com/Danny_Pham/WriteBash.com/raw/master/Install/0 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebExc
+   eption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> 
+ : The term '' is not recognized as the name of a cmdlet, function, script file, or operable program. 
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ 
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ : The term '' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ 
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["modifyvm", "40bee65a-1dd2-48db-abd9-b743d90c2643", "--natpf1", "delete", "ssh"]
+
+Stderr: VBoxManage.exe: error: An unexpected process (PID=0x00001F6C) has tried to lock the machine 'normalnode_default_
+1587456040766_82554', while only the process started by LaunchVMProcess (PID=0x00005B30) is allowed
+VBoxManage.exe: error: Details: code E_ACCESSDENIED (0x80070005), component MachineWrap, interface IMachine, callee IUnk
+nown
+VBoxManage.exe: error: Context: "LockMachine(a->session, LockType_Write)" at line 525 of file VBoxManageModifyVM.cpp
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+shell provisioner:
+* `path` for shell provisioner does not exist on the host system: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/instal
+l.sh
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+shell provisioner:
+* `path` for shell provisioner does not exist on the host system: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/instal
+l.sh
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+shell provisioner:
+* `path` for shell provisioner does not exist on the host system: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/instal
+l.sh
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["modifyvm", "40bee65a-1dd2-48db-abd9-b743d90c2643", "--natpf1", "delete", "ssh"]
+
+Stderr: VBoxManage.exe: error: An unexpected process (PID=0x00005F38) has tried to lock the machine 'normalnode_default_
+1587456040766_82554', while only the process started by LaunchVMProcess (PID=0x00005B30) is allowed
+VBoxManage.exe: error: Details: code E_ACCESSDENIED (0x80070005), component MachineWrap, interface IMachine, callee IUnk
+nown
+VBoxManage.exe: error: Context: "LockMachine(a->session, LockType_Write)" at line 525 of file VBoxManageModifyVM.cpp
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant halt
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["modifyvm", "40bee65a-1dd2-48db-abd9-b743d90c2643", "--natpf1", "delete", "ssh"]
+
+Stderr: VBoxManage.exe: error: An unexpected process (PID=0x00003784) has tried to lock the machine 'normalnode_default_
+1587456040766_82554', while only the process started by LaunchVMProcess (PID=0x00005B30) is allowed
+VBoxManage.exe: error: Details: code E_ACCESSDENIED (0x80070005), component MachineWrap, interface IMachine, callee IUnk
+nown
+VBoxManage.exe: error: Context: "LockMachine(a->session, LockType_Write)" at line 525 of file VBoxManageModifyVM.cpp
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2200 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Disk cannot be decreased in size. 30720 MB requested but disk is already 40960 MB.
+==> default: Booting VM...
+==> default: Waiting for cleanup before exiting...
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> get-process
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    417      26     9532      14324              4268   0 aciseagent
+    282      17     3428       6552       0.94   3728   1 aciseposture
+    570      28     7504      12192              4036   0 acnamagent
+    315      13     3132       5960              3376   0 acnamlogonagent
+    568      27    14460      16504       8.52  20268   1 AcroRd32
+    705      69   126392      37564     152.30  21916   1 AcroRd32
+    477      29    26492      23804       3.25  16492   1 ApplicationFrameHost
+     46       5     1084       3444       0.36  11028   1 AppUIMonitor_00
+    152       9     1860       4244              4712   0 armsvc
+    277      14     8940      17688       1.42  23664   0 audiodg
+    213      27     7628       8384     790.16  12856   1 bcua-notifier
+    465      42    19220      15036              4816   0 bcua-service
+    457      26    29540      17936             10784   0 BESClient
+    452      26     9332       6656       6.28  11368   1 BESClientUI
+   1568     186    31176      51332              4768   0 CcmExec
+   3375     135   247140     230888              4796   0 ccSvcHst
+    466      32     6992       7232      26.44   7912   1 ccSvcHst
+    378      22    45464      43968      20.36   1616   1 chrome
+    289      21    54068      68704      37.81   3108   1 chrome
+    218      15    12720      21260       0.16   9776   1 chrome
+   1676      43   298576     160456   1,417.42   9816   1 chrome
+    374      23    44640      43252      73.95  11208   1 chrome
+    283      19    47100      48984      12.08  11448   1 chrome
+   3260     194   271140     223792   1,566.20  11708   1 chrome
+    374      14     3476       7128       0.41  11892   1 chrome
+    193      14     3324       6036       0.16  11908   1 chrome
+    298      20    55596      80864      10.64  12640   1 chrome
+    578      46    42244      44888     258.27  13328   1 chrome
+    298      20    40912      40356       7.22  13660   1 chrome
+    328      20    52944      71084     201.48  13876   1 chrome
+    237      16    33252      37448      10.17  13888   1 chrome
+    246      18    44180      37272       4.84  13900   1 chrome
+    329      22    63184      47464       4.69  14228   1 chrome
+    307      20    43684      37552       2.75  14784   1 chrome
+    253      17    21732      24804       2.25  15824   1 chrome
+    241      17    18576      24740       2.78  15872   1 chrome
+    240      16    17824      21692       1.55  15908   1 chrome
+    510      36   120036      61012     217.52  16120   1 chrome
+    247      17    18220      23848       1.47  16872   1 chrome
+    248      17    18660      23804       1.66  17028   1 chrome
+    314      22    47204      66964      58.98  18276   1 chrome
+    331      21     8332      13908      11.13  18400   1 chrome
+    287      20    52944      51364      20.23  18708   1 chrome
+    281      19    45744      70376      11.86  19588   1 chrome
+    323      22    48108      74092       9.39  21740   1 chrome
+     51       5     3112       2400       1.69   5692   1 cmd
+    231      13     3252       6828              2672   0 CmRcService
+    241      17     7836       8836       1.89    892   1 Code
+    615      28   114440      40116      58.13   1736   1 Code
+   1497     142   149500      97180     174.59   3052   1 Code
+    533      66   141176      70452     168.11  13548   1 Code
+    360      73    46596      26036      14.44  13700   1 Code
+    425      43    48412      39312      20.14  14396   1 Code
+    458      23    13772      20896      39.27  15884   1 Code
+    130       8     5840       3308       0.47   3460   1 conhost
+    127       8     5712       3192              4084   0 conhost
+    150      10     6084       4232       0.50   6148   1 conhost
+    260      13     8344      10120      18.98  17732   1 conhost
+    918      27     2076       3980               680   0 csrss
+    921      27     2552       4572               824   1 csrss
+    474      17     4568      12336      82.06   4676   1 ctfmon
+    209      12     3448      10384      14.09  10140   1 CUI
+    318      18    23776      18616              4760   0 CxAudioSvc
+    184      10     2056       5352              4728   0 CxUtilSvc
+    172       9     3076       7180       2.72  13104   1 dllhost
+    161      10     2732       7660       1.20  22908   1 dllhost
+   1001      45    73572      50056              1412   1 dwm
+   1327      43   259632      45372              4936   0 edpa
+   3583     227   220916     184656   1,688.97   1016   1 explorer
+   1781      52    93128      44028      15.58  10652   1 Flow
+     44       6     2404       1816               612   0 fontdrvhost
+     44      10     5636       3400               668   1 fontdrvhost
+    190      11     2244        188             16520   0 GoogleCrashHandler
+    171       9     2120        212              8564   0 GoogleCrashHandler64
+    992      41    41148      36544      21.11  11528   1 GROOVE
+    567      28    16232      30920       2.97  11108   1 HxAccounts
+    992      44    29972      38788       5.02   5588   1 HxOutlook
+    672      27    10388      31636       7.72   3912   1 HxTsr
+    414      31   100748      85372             16092   0 IAStorDataMgrSvc
+    302      22    32068      19016       1.91  14220   1 IAStorIcon
+      0       0       52          8                 0   0 Idle
+    164       9     2372       5960              2352   0 igfxCUIService
+    926      33    14276      22384      82.58   9872   1 igfxEM
+    151       8     2168       5276              4908   0 IntelCpHDCPSvc
+    117       9     3104       4072              5004   0 kvoop
+    114      10     4272       4844              6792   0 kvoop
+    588      27    15448      35380      24.63   1968   1 LockApp
+   2129      31    11900      21120               864   0 lsass
+   3116      77   180700     154180     355.92  13196   1 lync
+    608      27    33784      21028       9.63   7840   1 lynchtmlconv
+    281      15     4192      10480             16352   0 MBAMAgent
+      0       0     2064     689000              1916   0 Memory Compression
+    424      33    17084       3776       1.25  14800   1 Microsoft.Photos
+    222      14     2676      10556              2044   0 MicrosoftEdgeUpdate
+    214      14     2676      10360             13264   0 MicrosoftEdgeUpdate
+    215      13     2576      10400             17824   0 MicrosoftEdgeUpdate
+    205      13     2524       9628             26444   0 MicrosoftEdgeUpdate
+    281      15     3760       3528       2.94   9156   1 MicTray64
+    182      12     2900       6616       0.69  11432   1 MSASCuiL
+   1393      66    43804      85792      19.16   2384   1 msedge
+    221      18    22888      22032       3.02   5784   1 msedge
+    261      18    17500      31544       2.28  15928   1 msedge
+    161      12     2724       8188       0.63  17200   1 msedge
+    294      20    40364      51028       9.38  20512   1 msedge
+    486      26    69348      38984       7.48  20536   1 msedge
+    186      11     2676       7564       0.58  21128   1 msedge
+    421      22    15348      26364       5.69  22220   1 msedge
+    238      15    12364      18152       1.95  23880   1 msedge
+    613      67   178228      26988              4900   0 MsMpEng
+    619      38    27960      17104             10324   0 MSUs
+    843      53    80044       9944             16356   0 NTAs
+    467      40    54396       5464      35.84  18152   1 NTAst
+    306      19     4872      18156             16560   1 NTWc
+    776      62    28060      33164      33.48  13008   1 OneDrive
+    395      23     7868      17176       3.39  16792   1 OpenWith
+    393      23     7720      23804       1.67  19744   1 OpenWith
+    394      23     7872      17368       1.86  20416   1 OpenWith
+    612      33    59104      70504      30.61  21420   1 powershell
+    230      27    25464      10524              8236   0 PresentationFontCache
+      0      13     1384       4720               120   0 Registry
+    187      12     2816       6620       0.61   9304   1 rundll32
+    458      25    10568      31232      82.23   2896   1 RuntimeBroker
+    148       9     2660       6436       2.67   3424   1 RuntimeBroker
+    211      14     6024      11416       1.81   4540   1 RuntimeBroker
+    639      30    12540      26376      10.72  10220   1 RuntimeBroker
+    461      21     7644      22100      15.69  10648   1 RuntimeBroker
+    189      12     2936       7380       0.81  12480   1 RuntimeBroker
+    555      27     9640      21528      10.47  15816   1 RuntimeBroker
+    221      13     3444      14492       3.17  19240   1 RuntimeBroker
+    381      25    35008      21972       3.25  17360   1 SCNotification
+    123       8     2080       6708             10560   0 SearchFilterHost
+    913      73    40952      27436              9176   0 SearchIndexer
+    369      13     2888      12528             24512   0 SearchProtocolHost
+   1236      97    93936      78828      25.22  14780   1 SearchUI
+    342      15     4564       9744              4788   0 SecurityHealthService
+    188       9     2516       6328              5168   0 sepWscSvc64
+    795      12     6780       9912               856   0 services
+    225      13     4636       2544       9.02   4284   1 SettingSyncHost
+     65       5     4724       5580              9728   0 SgrmBroker
+   1560      49    45060      57856      34.86   9432   1 ShellExperienceHost
+    619      19     9920      24392      86.23   5068   1 sihost
+   2141      38   101372      32388      13.45  10616   1 SmartAudio3
+     52       3      484        720               512   0 smss
+    439      23     6368       8904              4524   0 spoolsv
+     94       5     1344       2720                 8   0 svchost
+   1179      25    19304      28928               768   0 svchost
+   1552      21    11552      15332              1100   0 svchost
+    412      12     4372       8016              1152   0 svchost
+    225      14     2832       7796              1204   0 svchost
+   1653      25    24200      25720              1236   0 svchost
+    157       9     2356       5160              1268   0 svchost
+    529      20     5672       8472              1276   0 svchost
+    202      12     2060       5076              1284   0 svchost
+    181      38     8036       5712              1288   0 svchost
+    198      12     2696       7492              1448   0 svchost
+    164       9     2476       8724              1568   0 svchost
+    272      11     3980       6544              1608   0 svchost
+    190       9     2564       6388              1668   0 svchost
+    492      15    17912      14164              1716   0 svchost
+    273      15     3916       7344              1724   0 svchost
+    416      18     7256      12424              1728   0 svchost
+    225      10     4192       6352              1772   0 svchost
+    235      12     2984       6352              1776   0 svchost
+    222      15    53696      49824              1832   0 svchost
+    286       8     1760       4316              1844   0 svchost
+    522      33    13424      14356              1860   0 svchost
+    257      14     4840       7924              2004   0 svchost
+    444      21     4912      14856              2160   0 svchost
+    402      17     6696      11392              2208   0 svchost
+    264      25     2732       5644              2228   0 svchost
+    130       9     2240       6292              2252   0 svchost
+    186      10     2172       5428              2316   0 svchost
+    248      10     3440       7592              2432   0 svchost
+    200       9     2228       5488              2660   0 svchost
+    562      12     4524       8076              2696   0 svchost
+    215      10     2412       5876              2764   0 svchost
+    216      11     2736       6960              2772   0 svchost
+    245      13     3068       4948              2836   0 svchost
+    156      10     2180       5160              2844   0 svchost
+    214      11     3220       6484              2852   0 svchost
+    213      12     2624       6200              2920   0 svchost
+    413      14     4468      10992              3096   0 svchost
+    240      14     2696       6400              3152   0 svchost
+    466      17     4260       9220              3184   0 svchost
+    330       9     5960      12380              3344   0 svchost
+    401      20    10116      23284      66.91   3364   1 svchost
+    155      10     2244       5168              3396   0 svchost
+    475      18     4540       9796              3404   0 svchost
+    420      18     6188      10868              3776   0 svchost
+    216      13     3028       6600              3900   0 svchost
+    248      16     3128      10132              4396   0 svchost
+    133       7     1848       4272              4736   0 svchost
+    384      21    46764      35784              4752   0 svchost
+    186      10     2588       5980              4828   0 svchost
+    432      21     5928      18788              4876   0 svchost
+    743      23    12836      21876              4888   0 svchost
+    388      41     5496      12200              4916   0 svchost
+    136      10     2028       4336              4932   0 svchost
+    311      21     7496      12792              4948   0 svchost
+    141       9     2144       4308              5748   0 svchost
+    130       7     1780       4120              5860   0 svchost
+    386      24     3956       7932              5920   0 svchost
+    173      10     2648       7204       0.81   5984   1 svchost
+    371      17     4516      20160       1.34   7080   1 svchost
+    220      13     3036       7588              7456   0 svchost
+    168       9     2276       4996              8476   0 svchost
+    550      26    10076      31064      35.89   8548   1 svchost
+    298      14     5300      14308              9180   0 svchost
+    376      20     5712      14420              9564   0 svchost
+    185      12     2676      10464             11048   0 svchost
+    540      33    11744      15240             11260   0 svchost
+    347      16     5304      11332             11488   0 svchost
+    529      28     6556      15196       3.33  13288   1 svchost
+    169       9     2248       8476             14116   0 svchost
+    222      15     3508       8020             14748   0 svchost
+    214      12     3040       7392             16532   0 svchost
+    217      12     3072       7292             16832   0 svchost
+    189      15     6804       7168             17516   0 svchost
+    162      10     2132       6580             25664   0 svchost
+     86       8     1328       1016              8924   0 SynaMonApp
+    544      18     7412      17208      36.81   5580   1 SynTPEnh
+    248       7     1628       3688              4808   0 SynTPEnhService
+    105       9     1860       3768       0.30   9440   1 SynTPHelper
+   6448       0      220       9656                 4   0 System
+    894      43    19044      28624       4.28  18576   1 SystemSettings
+    234      14     3948      10912       1.80  17960   1 SystemSettingsBroker
+    372      32     8820      13904      21.19   8892   1 taskhostw
+    311      25    25912      33304       1.56   7560   1 Teams
+   1692      68   107584     108884   2,326.50  13500   1 Teams
+    673      33   137208      46432     518.59  13528   1 Teams
+    368      27    34740      35412       6.41  14856   1 Teams
+    341      49   106292      93668     670.78  15964   1 Teams
+   1153      53    81484      72216      38.02  16852   1 Teams
+    436     103   396276     287728     522.92  19228   1 Teams
+    927      59    81916      68668              4720   0 Titus.Enterprise.Client.Service
+    482      21    18636      17488              6536   0 Titus.Enterprise.HealthMonitor.Service
+    515     103   106024      42024      11.55  12308   1 Titus.FileWatcher
+   1656      37    38304      37708      38.81  12492   1 UcMapi
+    129       7     1904       4828              1436   0 unsecapp
+    544      37    26060      20896       7.80   5356   1 USCC_Widget
+   1017      18    10392      19172      46.23  19860   1 VBoxSVC
+    833      34    24592      26964              4860   0 vf_agent
+    234      15     2840       7260       0.78   9808   1 vf_host
+    722      39    21868      21060       1.64   9616   1 Video.UI
+    368      20    12636      30024       2.88   4424   1 VirtualBox
+     74       4     1176       3376       0.17  14668   1 VirtualBox
+    176      13     3528       5364              4844   0 vmnat
+     88       8     8376       3640              4956   0 vmnetdhcp
+    325      17     7840       9088              4744   0 vmware-authd
+    212      12     3280       6504              4924   0 vmware-usbarbitrator64
+    409      24     5704      11896              3388   0 vpnagent
+    563      31     9816      18472      48.13   9588   1 vpnui
+    133       8     2020       3948              5008   0 wdp
+    152      10     1360       3404               772   0 wininit
+    261      11     2748       8656               932   1 winlogon
+   1055      59    27364      36784       2.11   9580   1 WinStore.App
+    159       9     2508       5048              4072   0 wlanext
+    239      13     7844      11680              2800   0 WmiPrvSE
+    475      19    18236      24996              5512   0 WmiPrvSE
+   2566      31    20464      22116              6556   0 WmiPrvSE
+    185      10     3436       6120              7156   0 WmiPrvSE
+    166      11     4200       7124             13420   0 WmiPrvSE
+    349      17     8300      15040             16920   0 WmiPrvSE
+    212       8     3908       4004               596   0 WUDFHost
+    387      19   164820     163184              2372   0 xagt
+    268      15    20412      19080              2868   0 xagt
+    325      20    16948      17276              4852   0 xagt
+    232      16     3596       4184              7832   0 xagt
+    143      11     1984       4208       0.17  11492   1 xagtnotif
+
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> kill-process vmware
+kill-process : The term 'kill-process' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ kill-process vmware
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (kill-process:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+kill-process : The term 'kill-process' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ kill-process vmware
++ ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (kill-process:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> taskmgr
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Disk cannot be decreased in size. 30720 MB requested but disk is already 40960 MB.
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+[default] GuestAdditions 5.2.10 running --- OK.
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => C:/Users/naveenkumarve/Desktop/vaggy/normalnode
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant ssh
+Last login: Tue Apr 21 14:43:19 2020 from 10.0.2.2
+[vagrant@cent1 ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+Vagrant failed to initialize at a very early stage:
+
+There was an error loading a Vagrantfile. The file being loaded
+and the error message are shown below. This is usually caused by
+an invalid or undefined variable.
+
+Path: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/Vagrantfile
+Line number: 44
+Message: undefined local variable or method `conig'
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+Vagrant failed to initialize at a very early stage:
+
+There was an error loading a Vagrantfile. The file being loaded
+and the error message are shown below. This is usually caused by
+an invalid or undefined variable.
+
+Path: C:/Users/naveenkumarve/Desktop/vaggy/normalnode/Vagrantfile
+Line number: 44
+Message: undefined local variable or method `lamp'
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> vagrant reload
+==> default: Attempting graceful shutdown of VM...
+==> default: Checking if box 'bento/centos-7.1' version '2.2.2' is up to date...
+==> default: Clearing any previously set forwarded ports...
+==> default: Vagrant has detected a configuration issue which exposes a
+==> default: vulnerability with the installed version of VirtualBox. The
+==> default: current guest is configured to use an E1000 NIC type for a
+==> default: network adapter which is vulnerable in this version of VirtualBox.
+==> default: Ensure the guest is trusted to use this configuration or update
+==> default: the NIC type using one of the methods below:
+==> default:
+==> default:   https://www.vagrantup.com/docs/virtualbox/configuration.html#default-nic-type
+==> default:   https://www.vagrantup.com/docs/virtualbox/networking.html#virtualbox-nic-type
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> cls
+PS C:\Users\naveenkumarve\Desktop\vaggy\normalnode> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200424134434
+**********************
